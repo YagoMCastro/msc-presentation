@@ -27,13 +27,14 @@ Towards an open source tool for the magnetic microscopy community 🧲🔬
 <div class="col-large">
 
 <i class="fa fa-calendar-alt" style="margin: 0 10px 0 0"></i>
-20 of November 2025
+05 de Março  de 2025
 <span style="margin: 0 20px"></span>
-SBGf Conference | Rio de Janeiro, Brazil
+Defesa de Mestrado em Geofísica | São Paulo, Brasil
 
 <!-- Permission to reuse and CC-BY license logo -->
 <i class="fa fa-camera" style="margin: 0 10px 0 0"></i>
-Feel free to screenshot/share/reuse this presentation
+Sinta-se à vontade para fotografar/compartilhar/reutilizar esta apresentação
+
 <span style="margin: 0 20px"></span>
 <a href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons"></i><i class="fab fa-creative-commons-by" style="margin: 0 10px 0 2px"></i>CC-BY 4.0 License</a>
 
@@ -53,25 +54,34 @@ Feel free to screenshot/share/reuse this presentation
 </div>
 
 ===============================================================================
-# What is Paleomagnetism?
-- The study of Earth’s magnetic field as <b>recorded</b> in rocks.
+# O que é Paleomagnetismo?
+- O estudo do campo magnético da Terra conforme ele é **registrado** nas rochas.
+
 
 ===============================================================================
-# How minerals are magnetized?
-<ul>
-  <li class="fragment"><b>Thermoremanent Magnetization (TRM): </b>igneous rocks record Earth’s magnetic field as they cool below the Curie point (e.g. pure Magnetite: <b>580°C</b>)</li>
-  <li class="fragment"><b>Depositional Remanent Magnetization (DRM):</b> magnetic particles in sediments align with Earth’s field during deposition in aquatic environments</li>
-</ul>
+# Como os minerais são magnetizados?
+
+- <!-- .element: class="fragment" -->
+  **Magnetização Remanente Termal (TRM):** rochas ígneas registram o campo magnético da Terra à medida que esfriam abaixo do ponto de Curie (ex.: magnetita pura: **580°C**)
+
+- <!-- .element: class="fragment" -->
+  **Magnetização Remanente Deposicional (DRM):** partículas magnéticas em sedimentos se alinham com o campo magnético da Terra durante a deposição em ambientes aquáticos
 
 ===============================================================================
-# Why is paleomagnetism important?
 
-<ul>
-<li class="fragment"><b>Geomagnetic reversals:</b> shows that Earth's magnetic field has flipped many times throughout its history</li>
-<li class="fragment"><b>Continental drift and plate tectonics:</b> helped confirm the theory of continental drift and reconstruct past positions of the continents</li>
-<li class="fragment"><b>Geological dating:</b> used as a relative dating tool by comparing rock records with the known magnetic reversal timescale (magnetostratigraphy)</li>
-<li class="fragment"><b>Paleofield reconstruction:</b> allows us to understand how Earth’s magnetic field has evolved over hundreds of millions of years</li>
-</ul>
+# Por que o paleomagnetismo é importante?
+
+- <!-- .element: class="fragment" -->
+  **Reversões geomagnéticas:** mostram que o campo magnético da Terra já se inverteu muitas vezes ao longo de sua história
+
+- <!-- .element: class="fragment" -->
+  **Deriva continental e tectônica de placas:** ajudou a confirmar a teoria da deriva continental e a reconstruir as posições passadas dos continentes
+
+- <!-- .element: class="fragment" -->
+  **Datação geológica:** utilizado como ferramenta de datação relativa ao comparar registros em rochas com a escala de tempo conhecida das reversões magnéticas (magnetoestratigrafia)
+
+- <!-- .element: class="fragment" -->
+  **Reconstrução do paleocampo:** permite compreender como o campo magnético da Terra evoluiu ao longo de centenas de milhões de anos
 
 ===============================================================================
 <div class="r-stretch">
