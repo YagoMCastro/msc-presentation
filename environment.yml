@@ -1,4 +1,4 @@
-name: sbgf
+name: msc-presentation
 channels:
   - conda-forge
   - defaults
