@@ -23,14 +23,18 @@
 
 ## Paleomagnetismo
 - Overview sobre paleomag
-- Apresentar o problema
+- Apresentar o problema 
 
 ## Microscopia magnética
-- Apresentar microscopia magnética
-    - QDM
-    - Dado
-- Apresentar resultados dos papers de Bellon e Souza-junior
-- Apresentar necessidades gerais
+- Berndt 
+- Bellon
+    - Angular Misfit / N of particles
+        - Para partículas > 20uT misfit muito baixo que se aproximam a 0 graus
+    - Averaged Magnetic Moment / Field intensity
+        - A partir de 10uT, todos os cenários estão dentro do range de detectabilidade do QDM
+- Souza-Junior
+    - Criou fluxograma para estimativa semi-automática de dados de microscopia magnética
+    - Apresentar dado 
 - MAGALI
 
 ## Métodos
