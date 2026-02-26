@@ -266,70 +266,92 @@ Sinta-se à vontade para fotografar/compartilhar/reutilizar esta apresentação
 
 ===============================================================================
 <!-- .slide: data-background-opacity="0.2" data-background-image="assets/magali-logo.png"  data-background-size="contain" data-background-color="#262626" -->
+<div class="huge">
 
-<div class="huge ">
-
-What is Magali?
+O que é o Magali?
 
 <div class="large fragment">
 
-Free and open source 
-<br>
-<i class="fab fa-github"></i> <i class="fas fa-lock-open"></i>  <i class="fab fa-osi"></i>
-
-</div>
-
-</div>
-<div class="large fragment">
-
-Python library <i class="fab fa-python"></i>
+Biblioteca em Python <br><i class="fab fa-python"></i>
 
 </div>
 
 <div class="large fragment">
 
-Modelling and processing magnetic microscopy data 
-<br>
+Software livre e de código aberto  
+
+<i class="fab fa-github"></i> <i class="fas fa-lock-open"></i> <i class="fab fa-osi"></i>
+
+</div>
+
+</div>
+
+<div class="large fragment">
+
+Modelagem e processamento de dados de microscopia magnética  
 <i class="fas fa-magnet"></i> <i class="fas fa-microscope"></i>
 
 </div>
 
 ===============================================================================
 <!-- .slide: data-background-opacity="0.2" data-background-image="assets/magali-logo.png"  data-background-size="contain" data-background-color="#262626" -->
-# Why do we want to make it?
+# Por que queremos desenvolvê-la?
 
 <div class="fragment text-left">
 
-- Provide code that is **easy to use**
+- Fornecer um código **fácil de usar**
 
 </div>
 
 <div class="fragment text-left">
 
-- Determine the **spatial positions** of **multiple** grains
-
-</div>
-<div class="fragment text-left">
-
-- Facilitate the creation of **synthetic data**
-
-</div>
-<div class="fragment text-left">
-
-- Propose a standard **data format**
+- Determinar as **posições espaciais** de **múltiplos** grãos
 
 </div>
 
 <div class="fragment text-left">
 
-- Serve as a **foundation** for new methods 
+- Facilitar a criação de **dados sintéticos**
 
 </div>
+
 <div class="fragment text-left">
 
-- Leverage the potential of emerging **magnetic microscopy** studies
+- Propor um **formato padrão de dados**
 
 </div>
+
+<div class="fragment text-left">
+
+- Servir como **base** para desenvolvimento de novos métodos
+
+</div>
+
+<div class="fragment text-left">
+
+- Explorar o potencial de estudos emergentes em **microscopia magnética**
+
+</div>
+
+===============================================================================
+<h1>Sumário</h1>
+<ul style="list-style: none">
+  <li><b>Paleomagnetismo</b></li>
+  <li><b>Microscopia magnética</b></li>
+  <li style="color: red !important;">
+    <b>Métodos</b>
+    <ul style="list-style: none">
+      <li>Análise do Fluxo de Trabalho</li>
+      <li>Fundamentação Teórica</li>
+      <li>Desenvolvimento de software</li>
+    </ul>
+  </li>
+  <li><b>Comparação de Performance e Acurácia</b></li>  
+  <li><b>Demonstração em dados reais de microscopia magnética</b></li>
+  <li><b>Conclusões</b></li>
+</ul>
+
+===============================================================================
 
 ===============================================================================
 <section>
