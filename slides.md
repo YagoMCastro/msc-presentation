@@ -54,20 +54,35 @@ Sinta-se à vontade para fotografar/compartilhar/reutilizar esta apresentação
 
 ===============================================================================
 <h1>Sumário</h1>
-<ul>
-  <li class="fragment"><b>Paleomagnetismo</b></li>
-  <li class="fragment"><b>Microscopia magnética</b></li>
+<ul style="list-style: none; padding-left: 0;">
+  <li class="fragment" style="color: red !important;">
+    <b>Paleomagnetismo</b>
+  </li>
+
+  <li class="fragment">
+    <b>Microscopia magnética</b>
+  </li>
+
   <li class="fragment">
     <b>Métodos</b>
-    <ul>
+    <ul style="list-style: none;">
       <li class="fragment">Análise do Fluxo de Trabalho</li>
       <li class="fragment">Fundamentação Teórica</li>
       <li class="fragment">Desenvolvimento de software</li>
     </ul>
   </li>
-  <li class="fragment"><b>Comparação de Performance e Acurácia</b></li>  
-  <li class="fragment"><b>Demonstração em dados reais de microscopia magnética</b></li>
-  <li class="fragment"><b>Conclusões</b></li>
+
+  <li class="fragment">
+    <b>Comparação de Performance e Acurácia</b>
+  </li>
+
+  <li class="fragment">
+    <b>Demonstração em dados reais de microscopia magnética</b>
+  </li>
+
+  <li class="fragment">
+    <b>Conclusões</b>
+  </li>
 </ul>
 
 ===============================================================================
@@ -84,7 +99,6 @@ Sinta-se à vontade para fotografar/compartilhar/reutilizar esta apresentação
   **Magnetização Remanente Deposicional (DRM):** partículas magnéticas em sedimentos se alinham com o campo magnético da Terra durante a deposição em ambientes aquáticos
 
 ===============================================================================
-
 # Por que o paleomagnetismo é importante?
 
 - <!-- .element: class="fragment" -->
@@ -108,6 +122,24 @@ Sinta-se à vontade para fotografar/compartilhar/reutilizar esta apresentação
 <div class="r-stretch">
   <img src="assets/arrow.svg" height=100%>
 </div>
+
+===============================================================================
+<h1>Sumário</h1>
+<ul style="list-style: none">
+  <li><b>Paleomagnetismo</b></li>
+  <li style="color: red !important;"><b>Microscopia magnética</b></li>
+  <li>
+    <b>Métodos</b>
+    <ul style="list-style: none">
+      <li>Análise do Fluxo de Trabalho</li>
+      <li>Fundamentação Teórica</li>
+      <li>Desenvolvimento de software</li>
+    </ul>
+  </li>
+  <li><b>Comparação de Performance e Acurácia</b></li>  
+  <li><b>Demonstração em dados reais de microscopia magnética</b></li>
+  <li><b>Conclusões</b></li>
+</ul>
 
 ===============================================================================
 <div class="r-stretch">
@@ -135,23 +167,32 @@ Sinta-se à vontade para fotografar/compartilhar/reutilizar esta apresentação
 
 <img src="assets/berndt_paper.png" style="width: 80%" >
 
+
+
 ===============================================================================
 
 <img src="assets/bellon_paper.png" style="width: 80%" >
 
 ===============================================================================
+# O Estudo de Bellon et al. (2025)
 
 <div class="fragment text-left">
 
-- Bellon et al. (2025) modeled vortex-state grains, a more realistic scenario, using micromagnetic simulations.
+- **Investigaram** a aquisição de TRM por milhares de partículas nanoscópicas no **estado de vórtex**
 
 </div>
 <div class="fragment text-left">
 
-- <b>Hundreds to thousands</b> of vortex-state grains record a reliable TRM, indicating that the field was not ultra-weak.
+- **Simularam** o comportamento desses conjuntos sob diversas intensidades campos magnéticos
 
 </div>
-<div class="footnote-left">
+<div class="fragment text-left">
+
+- **Demonstraram** que o quando as partículas são afetadas com campos de maiores que **10 μT**, o paleocampo é registrado com extrema precisão (**erro angular < 1°**)
+
+</div>
+
+<div class="footnote-center">
 
 [Bellon et al. (2025)](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025GL114771)
 </div>
@@ -161,27 +202,62 @@ Sinta-se à vontade para fotografar/compartilhar/reutilizar esta apresentação
 <img src="assets/paper_2.png" style="width: 80%" >
 
 ===============================================================================
-<img src="assets/example_unmixxing_components.png" style="width: 100%">
+# Evolução da Inversão Magnética
 
-===============================================================================
-<img src="assets/stereogram_unmixxing_components.png" style="width: 100%">
-
-===============================================================================
-# Needs
 <div class="fragment text-left">
 
-- Algorithms for **automatic detection** of magnetic **grains** and its **magnetic moment** determination
+- **Souza-Junior et al. (2024)** propuseram um novo fluxo de trabalho que adapta técnicas de aeromagnetometria e processamento de imagens para **isolar o sinal** de partículas individuais.
 
 </div>
 <div class="fragment text-left">
 
-- **Open software** for forward **modelling** and **inversion** techniques specific to magnetic microscopy 
+- **Estimaram** a posição das fontes via **Deconvolução de Euler**, utilizando essas coordenadas como base para calcular os momentos magnéticos por **inversão linear**.
+
+</div>
+
+<div class="footnote-center">
+
+[Souza-Junior et al. (2024)](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023GC011082)
+</div>
+
+===============================================================================
+# Evolução da Inversão Magnética
+
+<div class="text-left">
+
+- **Souza-Junior et al. (2025)** aprimoraram  o método com uma **inversão não-linear iterativa**: o sinal das fontes já modeladas é subtraído dos dados, revelando novos grãos no campo residual.
+
+</div>
+<div class="fragment text-left">
+
+- **Processaram** dados reais espeleotema, localizando e caracterizando **centenas de partículas** em apenas **alguns minutos**.
+
+</div>
+
+<div class="footnote-center">
+
+[Souza-Junior et al. (2025)](https://eartharxiv.org/repository/view/8869/)
+
+</div>
+
+===============================================================================
+# Necessidades
+
+<div class="fragment text-left">
+
+- Algoritmos para **detecção automática** de **grãos magnéticos** e determinação de seus **momentos magnéticos**
 
 </div>
 
 <div class="fragment text-left">
 
-- **Data conventions**  
+- **Software aberto** para **modelagem direta** e técnicas de **inversão** específicas para microscopia magnética
+
+</div>
+
+<div class="fragment text-left">
+
+- **Convenções de dados**
 
 </div>
 
