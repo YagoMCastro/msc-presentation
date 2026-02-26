@@ -46,23 +46,39 @@ Sinta-se à vontade para fotografar/compartilhar/reutilizar esta apresentação
 <div class="talk-logos">
   <a href="https://www.compgeolab.org"><img src="assets/compgeolab-banner-light.svg" alt="Computer-Oriented Geoscience Lab"></a>
   <a href="https://www.iag.usp.br/"><img src="assets/iag.png" alt="Instituto de Astronomia, Geofísica e Ciências Atmosféricas"></a>
-  <a href="https://www.usp.br/"><img src="assets/sbgflogo.webp" alt="Universidade de São Paulo"></a>
+  <a href="https://www.gov.br/capes/pt-br"><img src="assets/capes.png" alt="CAPES"></a>
 </div>
 </div>
-
 </div>
 </div>
 
 ===============================================================================
-# O que é Paleomagnetismo?
-- O estudo do campo magnético da Terra conforme ele é **registrado** nas rochas.
+<h1>Sumário</h1>
+<ul>
+  <li class="fragment"><b>Paleomagnetismo</b></li>
+  <li class="fragment"><b>Microscopia magnética</b></li>
+  <li class="fragment">
+    <b>Métodos</b>
+    <ul>
+      <li class="fragment">Análise do Fluxo de Trabalho</li>
+      <li class="fragment">Fundamentação Teórica</li>
+      <li class="fragment">Desenvolvimento de software</li>
+    </ul>
+  </li>
+  <li class="fragment"><b>Comparação de Performance e Acurácia</b></li>  
+  <li class="fragment"><b>Demonstração em dados reais de microscopia magnética</b></li>
+  <li class="fragment"><b>Conclusões</b></li>
+</ul>
 
+===============================================================================
+# O que é Paleomagnetismo?
+- O estudo do campo magnético da Terra conforme ele é **registrado** nas rochas
 
 ===============================================================================
 # Como os minerais são magnetizados?
 
 - <!-- .element: class="fragment" -->
-  **Magnetização Remanente Termal (TRM):** rochas ígneas registram o campo magnético da Terra à medida que esfriam abaixo do ponto de Curie (ex.: magnetita pura: **580°C**)
+  **Magnetização Remanente Termal (TRM):** rochas ígneas registram o campo magnético  à medida que esfriam abaixo do ponto de Curie (ex.: magnetita pura: **580°C**)
 
 - <!-- .element: class="fragment" -->
   **Magnetização Remanente Deposicional (DRM):** partículas magnéticas em sedimentos se alinham com o campo magnético da Terra durante a deposição em ambientes aquáticos
