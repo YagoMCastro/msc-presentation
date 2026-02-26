@@ -53,36 +53,22 @@ Sinta-se à vontade para fotografar/compartilhar/reutilizar esta apresentação
 </div>
 
 ===============================================================================
-<h1>Sumário</h1>
-<ul style="list-style: none; padding-left: 0;">
-  <li class="fragment" style="color: red !important;">
-    <b>Paleomagnetismo</b>
-  </li>
+# Sumário
 
-  <li class="fragment">
-    <b>Microscopia magnética</b>
-  </li>
-
-  <li class="fragment">
+<ul style="list-style: none">
+  <li  style="color: red !important;"><b>Paleomagnetismo</b></li>
+  <li><b>Microscopia magnética</b></li>
+  <li>
     <b>Métodos</b>
-    <ul style="list-style: none;">
-      <li class="fragment">Análise do Fluxo de Trabalho</li>
-      <li class="fragment">Fundamentação Teórica</li>
-      <li class="fragment">Desenvolvimento de software</li>
+    <ul style="list-style: none">
+      <li>Análise do Fluxo de Trabalho</li>
+      <li>Fundamentação Teórica</li>
+      <li>Desenvolvimento de software</li>
     </ul>
   </li>
-
-  <li class="fragment">
-    <b>Comparação de Performance e Acurácia</b>
-  </li>
-
-  <li class="fragment">
-    <b>Demonstração em dados reais de microscopia magnética</b>
-  </li>
-
-  <li class="fragment">
-    <b>Conclusões</b>
-  </li>
+  <li><b>Comparação de Performance e Acurácia</b></li>  
+  <li><b>Demonstração em dados reais de microscopia magnética</b></li>
+  <li><b>Conclusões</b></li>
 </ul>
 
 ===============================================================================
@@ -111,7 +97,7 @@ Sinta-se à vontade para fotografar/compartilhar/reutilizar esta apresentação
   **Datação geológica:** utilizado como ferramenta de datação relativa ao comparar registros em rochas com a escala de tempo conhecida das reversões magnéticas (magnetoestratigrafia)
 
 - <!-- .element: class="fragment" -->
-  **Reconstrução do paleocampo:** permite compreender como o campo magnético da Terra evoluiu ao longo de centenas de milhões de anos
+  **Reconstrução do paleocampo:** permite compreender como o campo magnético terrestre evoluiu ao longo de centenas de milhões de anos
 
 ===============================================================================
 <div class="r-stretch">
@@ -124,7 +110,8 @@ Sinta-se à vontade para fotografar/compartilhar/reutilizar esta apresentação
 </div>
 
 ===============================================================================
-<h1>Sumário</h1>
+# Sumário
+
 <ul style="list-style: none">
   <li><b>Paleomagnetismo</b></li>
   <li style="color: red !important;"><b>Microscopia magnética</b></li>
@@ -167,23 +154,21 @@ Sinta-se à vontade para fotografar/compartilhar/reutilizar esta apresentação
 
 <img src="assets/berndt_paper.png" style="width: 80%" >
 
-
-
 ===============================================================================
 
 <img src="assets/bellon_paper.png" style="width: 80%" >
 
 ===============================================================================
-# O Estudo de Bellon et al. (2025)
+# Bellon et al. (2025)
 
-<div class="fragment text-left">
+<div class="text-left">
 
 - **Investigaram** a aquisição de TRM por milhares de partículas nanoscópicas no **estado de vórtex**
 
 </div>
 <div class="fragment text-left">
 
-- **Simularam** o comportamento desses conjuntos sob diversas intensidades campos magnéticos
+- **Simularam** o comportamento desses conjuntos sob diversas intensidades de campos magnéticos
 
 </div>
 <div class="fragment text-left">
@@ -202,16 +187,16 @@ Sinta-se à vontade para fotografar/compartilhar/reutilizar esta apresentação
 <img src="assets/paper_2.png" style="width: 80%" >
 
 ===============================================================================
-# Evolução da Inversão Magnética
+# Souza-Junior et al. (2024)
 
-<div class="fragment text-left">
+<div class="text-left">
 
-- **Souza-Junior et al. (2024)** propuseram um novo fluxo de trabalho que adapta técnicas de aeromagnetometria e processamento de imagens para **isolar o sinal** de partículas individuais.
+- **Souza-Junior et al. (2024)** propuseram um novo fluxo de trabalho que adapta técnicas de aeromagnetometria e processamento de imagens para **isolar o sinal** de partículas individuais
 
 </div>
 <div class="fragment text-left">
 
-- **Estimaram** a posição das fontes via **Deconvolução de Euler**, utilizando essas coordenadas como base para calcular os momentos magnéticos por **inversão linear**.
+- **Estimaram** a posição das fontes via **Deconvolução de Euler**, utilizando essas coordenadas como base para calcular os momentos magnéticos por **inversão linear**
 
 </div>
 
@@ -221,16 +206,16 @@ Sinta-se à vontade para fotografar/compartilhar/reutilizar esta apresentação
 </div>
 
 ===============================================================================
-# Evolução da Inversão Magnética
+# Souza-Junior et al. (2025)
 
 <div class="text-left">
 
-- **Souza-Junior et al. (2025)** aprimoraram  o método com uma **inversão não-linear iterativa**: o sinal das fontes já modeladas é subtraído dos dados, revelando novos grãos no campo residual.
+- **Souza-Junior et al. (2025)** aprimoraram  o método com uma **inversão não-linear iterativa**: o sinal das fontes já modeladas é subtraído dos dados, revelando novos grãos no campo residual
 
 </div>
 <div class="fragment text-left">
 
-- **Processaram** dados reais espeleotema, localizando e caracterizando **centenas de partículas** em apenas **alguns minutos**.
+- **Processaram** dados reais espeleotema, localizando e caracterizando **centenas de partículas** em apenas **alguns minutos**
 
 </div>
 
@@ -334,7 +319,8 @@ Modelagem e processamento de dados de microscopia magnética
 </div>
 
 ===============================================================================
-<h1>Sumário</h1>
+# Sumário
+
 <ul style="list-style: none">
   <li><b>Paleomagnetismo</b></li>
   <li><b>Microscopia magnética</b></li>
@@ -432,7 +418,7 @@ $$\partial_y f(x, y, z) \approx \frac{f(x, y + \Delta y, z) - f(x , y + \Delta y
 ===============================================================================
 # Cálculo em Z
 
-<div class="fragment text-left">
+<div class="text-left">
 
 - **Obtemos** as variações no eixo vertical ($f(z + \Delta z)$ e $f(z - \Delta z)$) aplicando **continuação para cima e para baixo** no domínio do número de onda
 
@@ -510,7 +496,7 @@ $$\partial_y f(x, y, z) \approx \frac{f(x, y + \Delta y, z) - f(x , y + \Delta y
 
 # Filtro LoG
 
-<div class="fragment text-left">
+<div class="text-left">
 
 - **Suavizamos** a imagem primeiro com um kernel Gaussiano para eliminar ruídos de alta frequência:
 
@@ -552,7 +538,7 @@ $$\text{gLoG}(x, y; \sigma_x, \sigma_y, \theta) = \sigma_x \sigma_y \left( \frac
 
 <div class="fragment text-left">
 
-- **Garantimos** uma separação de fontes altamente precisa, robusta contra ruídos e adaptável a variações no tamanho e formato dos grãos
+- Obtemos uma separação de fontes altamente precisa, robusta contra ruídos e adaptável a variações no tamanho e formato dos grãos
 
 </div>
 
@@ -585,400 +571,1028 @@ $$\text{gLoG}(x, y; \sigma_x, \sigma_y, \theta) = \sigma_x \sigma_y \left( \frac
 </div>
 
 ===============================================================================
-<section>
-<style>
-  pre.compact code {
-    line-height: 1.0em !important;
-    font-size: 1.3em !important;
-  }
-  .fragment {
-    display: block;
-    margin: 0 !important;
-    padding: 0 !important;
-    transform: none !important;
-  }
-  .block-space {
-    margin-top: -1.0em !important;
-  }
-</style>
-<pre class="compact"><code class="python" data-trim data-noescape>
-<span class="fragment">
-# Import standard Python libraries
-import numpy as np
-import skimage.exposure
-import xarray as xr
-import matplotlib.pyplot as plt
-</span><span class="fragment">
-# Import Fatiando a Terra libraries
-import harmonica as hm
-import ensaio
-import magali
-</span><span class="fragment">
-# Download the data
-fname = ensaio.fetch_morroco_speleothem_qdm(version=1, file_format="matlab")
-data = magali.read_qdm_harvard(fname)
-</code></pre>
-</section>
+# Deconvolução de Euler
 
-===============================================================================
-<section>
-<style>
-  pre.compact code {
-    line-height: 1.0em !important;
-    font-size: 1.3em !important;
-  }
-  .fragment {
-    display: block;
-    margin: 0 !important;
-    padding: 0 !important;
-    transform: none !important;
-  }
-  .block-space {
-    margin-top: -1.0em !important;
-  }
-</style>
-<pre class="compact"><code class="txt" data-trim data-noescape>
-xarray.DataArray 'bz' (y: 600, x: 960)> Size: 5MB
-array([[ 352.40587477,   94.8913792 ,   41.61924299, ...,  470.18833933,
-         129.20055397,   18.50120941],
-       [ 525.04809649,  624.84659897,   53.45418   , ...,  450.42515609,
-         240.12455308,  -73.61367693],
-       [ 105.0939369 ,  638.76559489,  307.60736872, ...,  236.91326522,
-         386.8498122 ,  -86.44215589],
-       ...,
-       [ -83.74367957,   32.98078244, -411.75073652, ...,  745.99373583,
-        1036.20033954, -140.64317643],
-       [ 171.17113661, -214.47801235,  159.23437984, ...,  124.58138395,
-         258.54331931,  -90.3376945 ],
-       [  80.60950354,  273.08367487,  118.23499313, ...,   -4.19572521,
-         -53.55728012,    2.10335918]])
-Coordinates:
-  * x        (x) float64 8kB 0.0 2.35 4.7 7.05 ... 2.249e+03 2.251e+03 2.254e+03
-  * y        (y) float64 5kB 0.0 2.35 4.7 7.05 ... 1.403e+03 1.405e+03 1.408e+03
-    z        (y, x) float64 5MB 5.0 5.0 5.0 5.0 5.0 5.0 ... 5.0 5.0 5.0 5.0 5.0
-Attributes:
-    long_name:  vertical magnetic field
-    units:      nT
-</code></pre>
-</section>
-
-===============================================================================
-<!-- .slide: data-background-image="assets/qdm_data.png"  data-background-size="contain" data-background-color="#262626" -->
-
-===============================================================================
-<section>
-<style>
-  pre.compact code {
-    line-height: 1.0em !important;
-    font-size: 1.3em !important;
-  }
-  .fragment {
-    display: block;
-    margin: 0 !important;
-    padding: 0 !important;
-    transform: none !important;
-  }
-  .block-space {
-    margin-top: -1.0em !important;
-  }
-</style>
-<pre class="compact"><code class="python" data-trim data-noescape>
-<span>
-# Upward continuation
-height_difference = 5.0 # μm
-data_up = (
-    hm.upward_continuation(data, height_difference)
-    .assign_attrs(data.attrs)
-    .assign_coords(x=data.x, y=data.y)
-    .assign_coords(z=data.z + height_difference)
-    .rename("bz")
-)
-</span>
-</code></pre>
-</section>
-
-===============================================================================
-<!-- .slide: data-background-image="assets/data_up.png"  data-background-size="contain" data-background-color="#262626" -->
-
-===============================================================================
-<section>
-<style>
-  pre.compact code {
-    line-height: 1.0em !important;
-    font-size: 1.3em !important;
-  }
-  .fragment {
-    display: block;
-    margin: 0 !important;
-    padding: 0 !important;
-    transform: none !important;
-  }
-  .block-space {
-    margin-top: -1.0em !important;
-  }
-</style>
-<pre class="compact"><code class="python" data-trim data-noescape>
-<span>
-# Calculate Total Gradient Amplitude (TGA)
-dx, dy, dz, tga = magali.gradient(data_up)
-data_up["dx"], data_up["dy"], data_up["dz"], data_up["tga"] = dx, dy, dz, tga
-<span class="fragment">
-# Stretch the contrast of TGA image
-stretched = skimage.exposure.rescale_intensity(
-    tga, in_range=tuple(np.percentile(tga, (1, 99)))
-)
-data_tga_stretched = xr.DataArray(stretched, coords=data_up.coords)
-</span>
-</code></pre>
-</section>
-
-===============================================================================
-<!-- .slide: data-background-image="assets/stretched.png"  data-background-size="contain" data-background-color="#262626" -->
-
-===============================================================================
-<section>
-<style>
-  pre.compact code {
-    line-height: 1.0em !important;
-    font-size: 1.3em !important;
-  }
-  .fragment {
-    display: block;
-    margin: 0 !important;
-    padding: 0 !important;
-    transform: none !important;
-  }
-  .block-space {
-    margin-top: -1.0em !important;
-  }
-</style>
-<pre class="compact"><code class="python" data-trim data-noescape>
-<span>
-# Detect anomalies
-bounding_boxes = magali.detect_anomalies(
-    data_tga_stretched,
-    size_range=[20, 150],
-    detection_threshold=0.02,
-    border_exclusion=2,
-)
-</span>
-</code></pre>
-</section>
-
-===============================================================================
-<!-- .slide: data-background-image="assets/detection.png"  data-background-size="contain" data-background-color="#262626" -->
-
-===============================================================================
-<section>
-<style>
-  pre.compact code {
-    line-height: 1.0em !important;
-    font-size: 1.3em !important;
-  }
-  .fragment {
-    display: block;
-    margin: 0 !important;
-    padding: 0 !important;
-    transform: none !important;
-  }
-  .block-space {
-    margin-top: -1.0em !important;
-  }
-</style>
-<pre class="compact"><code class="python" data-trim data-noescape>
-<span>
-# Iterative nonlinear inversion
-data_updated, locations_, dipole_moments_, r2_values = magali.iterative_nonlinear_inversion(
-    data_up,
-    bounding_boxes,
-    height_difference=height_difference,
-    copy_data=True,
-)
-</span>
-</code></pre>
-</section>
-
-===============================================================================
-<section>
-<style>
-  pre.compact code {
-    line-height: 1.0em !important;
-    font-size: 1.3em !important;
-  }
-  .fragment {
-    display: block;
-    margin: 0 !important;
-    padding: 0 !important;
-    transform: none !important;
-  }
-  .block-space {
-    margin-top: -1.0em !important;
-  }
-</style>
-<pre class="compact"><code class="python" data-trim data-noescape>
-<span>
-# Plot the data
-</span><span class="fragment">
-locations_arr = np.array(locations_)
-</span><span class="fragment">
-fig, ax = plt.subplots()
-</span><span class="fragment">
-data.plot.pcolormesh(ax=ax, cmap="seismic", vmin=-10000, vmax=10000)
-</span><span class="fragment">
-magali.plot_bounding_boxes(bounding_boxes, ax=ax, color="black", linewidth=1.5)
-</span><span class="fragment">
-ax.scatter(
-    locations_arr[:, 0],  # x
-    locations_arr[:, 1],  # y
-    c="green",
-    marker=".",
-    s=60,
-    label="Dipole estimated location"
-)
-plt.legend()
-</span><span class="fragment">
-plt.show()
-</span>
-</code></pre>
-</section>
-
-===============================================================================
-<!-- .slide: data-background-opacity="1" data-background-image="assets/magali_code_example.png"  data-background-size="contain" data-background-color="#262626" -->
-
-===============================================================================
-# Conclusions
-<div class="fragment text-left">
-
-- Magnetic microscopy lets us investigate magnetism at the grain scale
+<p class="fragment text-left"><b>O que é:</b> um método para estimar a localização e a profundidade de fontes magnéticas a partir de dados de campo total</p>
+<div class="text-left fragment">
+  <b>Características:</b><br>
+  <ul class="text-left"> 
+    <li class="fragment">Assume um modelo de fonte dipolar</li>
+    <li class="fragment">Aplicado a cada região segmentada dos dados</li>
+    <li class="fragment">Fornece uma estimativa da posição da fonte</li>
+    <li class="fragment">Baseado na equação de homogeneidade de Euler</li>
+  </ul>
 </div>
 
-<div class="fragment text-left">
-
-- <strong>Magali</strong> brings <b>automation, reproducibility</b>, and <b>speed</b> to these analyses
-
-</div>
-<style>
-  .fragment .inline{
-    display: inline !important;
-  }
-</style>
-
-<div class="fragment text-left">
-
-  - <span class="inline">It integrates open tools,</span>
-</div>
-
-
 ===============================================================================
-# Conclusions
-<div class="text-left">
+# Equação de Homogeneidade de Euler
 
-- Magnetic microscopy lets us investigate magnetism at the grain scale
-
-</div>
+$$
+(x - x_c)\partial_x f + (y - y_c)\partial_y f + (z - z_c)\partial_z f = (b - f)\eta
+$$ 
 
 <div class="text-left">
-
-- <strong>Magali</strong> brings automation, reproducibility, and speed to these analyses
-
-</div>
-<style>
-  .fragment .inline{
-    display: inline !important;
-  }
-</style>
-
-<div class="text-left">
-
-  - <span class="inline">It integrates open tools,</span><span class="inline"> FAIR data,</span>
+<ul>
+  <li class="fragment">$x,y,z$ : coordenadas dos dados</li>
+  <li class="fragment">$x_c,y_c,z_c$ : coordenadas da fonte do campo magnético</li>
+  <li class="fragment">$f$ : função homogênea (ex.: $b_z$)</li>
+  <li class="fragment">$b$ : nível de base (deslocamento constante do sinal)</li>
+  <li class="fragment">$\eta$ : índice estrutural</li>
+</ul>
 </div>
 
 <div class="footnote-center">
 
-<b>FAIR</b>: <b>F</b>indable, <b>A</b>ccessible, <b>I</b>nteroperable and <b>R</b>eusable</div>
+[Souza-Junior et al. 2024](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2023GC011082)
 
 </div>
+
+===============================================================================
+# Equação de Homogeneidade de Euler
+
+$$
+(x - x_c)\partial_x f + (y - y_c)\partial_y f + (z - z_c)\partial_z f = (b - f)\eta
+$$ 
+<p class="fragment"> Expandindo para um modelo pseudo-paramétrico com parâmetros $x_c, y_c, z_c, b$</p>
+<div class="fragment">
+
+$$
+\underbrace{x_c \partial_x f + y_c \partial_y f + z_c \partial_z f + \eta b}_\text{Paremétrica} = \underbrace{x \partial_x f + y \partial_y f + z \partial_z f + \eta f}_\text{Não-paramétrica}
+$$
+</div>
+<div class="footnote-center">
+
+[Souza-Junior et al 2024](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2023GC011082)
+
+</div>
+
+===============================================================================
+# Equação de Homogeneidade de Euler
+
+$$
+x_c \ \partial_x f + y_c \ \partial_y f + z_c \ \partial_z f + \eta b
+=
+x \ \partial_x f + y \ \partial_y f + z \ \partial_z f + \eta f
+$$
+
+<p class="fragment">Aplicando a cada ponto de dado, forma-se um sistema linear $N \times 4$</p>
+
+<p class="fragment">
+\[
+\underbrace{
+\begin{bmatrix}
+\partial_x f_1 & \partial_y f_1 & \partial_z f_1 & \eta \\
+\partial_x f_2 & \partial_y f_2 & \partial_z f_2 & \eta \\
+\vdots & \vdots & \vdots & \vdots \\
+\partial_x f_N & \partial_y f_N & \partial_z f_N & \eta
+\end{bmatrix}
+}_{\text{Matriz Jacobiana}}
+\underbrace{
+\begin{bmatrix}
+x_c \\ y_c \\ z_c \\ b
+\end{bmatrix}
+}_{\text{Vetor de parâmetros}}
+=
+\underbrace{
+\begin{bmatrix}
+x_1 \partial_x f_1 + y_1 \partial_y f_1 + z_1 \partial_z f_1 + \eta f_1 \\
+x_2 \partial_x f_2 + y_2 \partial_y f_2 + z_2 \partial_z f_2 + \eta f_2 \\
+\vdots \\
+x_N \partial_x f_N + y_N \partial_y f_N + z_N \partial_z f_N + \eta f_N
+\end{bmatrix}
+}_{\text{Vetor de pseudodados}}
+\]
+</p>
+
+<div class="fragment">
+
+$$\mathbf{Gp=h}$$
+
+</div>
+<div class="footnote-center">
+
+[Souza-Junior et al. 2024](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2023GC011082)
+
+</div>
+
+===============================================================================
+# Solução por mínimos quadrados
+
+$$
+\mathbf{G} \mathbf{p} = \mathbf{h}
+$$
+
+<div class="text-left fragment">
+
+<p class="text-left">Utilizamos uma <b>solução de mínimos quadrados</b>, cuja função objetivo é:</p>
+
+$$
+\Phi (\mathbf{p}) = ||\mathbf{h}^o - \mathbf{h}||^2
+$$
+
+<ul>
+  <li>$\Phi (\mathbf{p})$ : função objetivo</li>
+  <li>$\mathbf{h}^o$ : dados observados</li>
+  <li>$\mathbf{h}$ : dados preditos</li>
+</ul>
+
+</div>
+
+===============================================================================
+# Para resolver
+
+<ol>
+  <li class="fragment">
+    <strong>Expandindo a expressão:</strong><br>
+    \[
+    \Phi(\mathbf{p}) = (\mathbf{h}^o - \mathbf{G}\mathbf{p})^\top (\mathbf{h}^o - \mathbf{G}\mathbf{p}) = \underbrace{\mathbf{h}^{o\top}\mathbf{h}^o - 2\mathbf{p}^\top \mathbf{G}^\top \mathbf{h}^o + \mathbf{p}^\top \mathbf{G}^\top \mathbf{G} \mathbf{p}}_\text{Paraboloid}
+    \]
+  </li>
+  <li class="fragment">
+    <strong>Utilizamos o gradiente em respeito a \(\mathbf{p}\) and atribuímos zero:</strong><br>
+    \[
+      \nabla_{\mathbf{p}} \Phi(\mathbf{p}) = -2 \mathbf{G}^\top \mathbf{h}^o + 2 \mathbf{G}^\top \mathbf{G} \mathbf{p}=\mathbf{0}
+    \]
+    \[
+      \boxed{
+      \mathbf{G}^\top \mathbf{G} \mathbf{p} = \mathbf{G}^\top \mathbf{h}^o
+      }
+    \]
+  </li>
+  <li class="fragment">
+    <strong>Resolvemos as equações normais e estimar $x_c$, $y_c$, $z_c$ e $b$:</strong><br>
+  </li>
+</ol>
+
+===============================================================================
+# Inversão linear
+## Modelo de Campo de Dipolo
+
+<p class="text-left">O campo $\mathbf{b}$ gerado por um dipolo $\mathbf{m} = [m_x \ m_y \ m_z]^\top$$:</p>
+$$
+\mathbf{b} = 
+\begin{bmatrix}
+b_x \\
+b_y \\
+b_z
+\end{bmatrix}
+=
+\frac{\mu_0}{4\pi}
+\begin{bmatrix}
+\frac{\partial^2}{\partial x \partial x} \frac{1}{r} & \frac{\partial^2}{\partial x \partial y} \frac{1}{r} & \frac{\partial^2}{\partial x \partial z} \frac{1}{r} \\
+\frac{\partial^2}{\partial y \partial x} \frac{1}{r} & \frac{\partial^2}{\partial y \partial y} \frac{1}{r} & \frac{\partial^2}{\partial y \partial z} \frac{1}{r} \\
+\frac{\partial^2}{\partial z \partial x} \frac{1}{r} & \frac{\partial^2}{\partial z \partial y} \frac{1}{r} & \frac{\partial^2}{\partial z \partial z} \frac{1}{r}
+\end{bmatrix}
+\begin{bmatrix}
+m_x \\
+m_y \\
+m_z
+\end{bmatrix}
+=
+\frac{\mu_0}{4\pi} \mathbf{M} \mathbf{m}
+$$
+<br>
+<div class="text-left"><ul>
+<li> $r=\sqrt{(x-x_c)^2+(y-y_c)^2+(z-z_c)^2}$ </li>
+<li> $\mu_0$ : permeabilidade magnética</li>
+</ul></div>
+
+===============================================================================
+<h1>Sistema para $b_z$</h1>
+<p>
+\[
+\mathbf{b} = 
+\begin{bmatrix}
+b_x \\
+b_y \\
+b_z
+\end{bmatrix}
+=
+\frac{\mu_0}{4\pi}
+\begin{bmatrix}
+\frac{\partial^2}{\partial x \partial x} \frac{1}{r} & \frac{\partial^2}{\partial x \partial y} \frac{1}{r} & \frac{\partial^2}{\partial x \partial z} \frac{1}{r} \\
+\frac{\partial^2}{\partial y \partial x} \frac{1}{r} & \frac{\partial^2}{\partial y \partial y} \frac{1}{r} & \frac{\partial^2}{\partial y \partial z} \frac{1}{r} \\
+\frac{\partial^2}{\partial z \partial x} \frac{1}{r} & \frac{\partial^2}{\partial z \partial y} \frac{1}{r} & \frac{\partial^2}{\partial z \partial z} \frac{1}{r}
+\end{bmatrix}
+\begin{bmatrix}
+m_x \\
+m_y \\
+m_z
+\end{bmatrix}
+=
+\frac{\mu_0}{4\pi} \mathbf{M} \mathbf{m}
+\]</p>
+
+$$
+b_z = 
+\frac{\mu_0}{4\pi}
+\begin{bmatrix}
+\frac{\partial^2}{\partial z \partial x} \frac{1}{r} & \frac{\partial^2}{\partial z \partial y} \frac{1}{r} & \frac{\partial^2}{\partial z \partial z} \frac{1}{r}
+\end{bmatrix}
+\begin{bmatrix}
+m_x \\
+m_y \\
+m_z
+\end{bmatrix}^\top 
+$$
+
+===============================================================================
+$$
+\frac{\partial^2}{\partial z \partial x} \frac{1}{r} = \frac{3(z - z_c)(x - x_c)}{r^5}
+$$
+$$
+\frac{\partial^2}{\partial z \partial y} \frac{1}{r} = \frac{3(z - z_c)(y - y_c)}{r^5}
+$$
+$$
+\frac{\partial^2}{\partial z \partial z} \frac{1}{r} = \frac{3(z - z_c)^2}{r^5} - \frac{1}{r^3}
+$$
+
+===============================================================================
+# Formulação do Problema
+
+<p class="text-left">
+Dadas $N$ observações de $b_z$ em uma janela contendo uma única fonte,
+forma-se um sistema linear $N \times 3$:
+</p>
+\[
+\underbrace{  
+\begin{bmatrix}
+\frac{\mu_0}{4\pi} \frac{3(z_1 - z_c)(x_1 - x_c)}{r_1^5} & \frac{\mu_0}{4\pi} \frac{3(z_1 - z_c)(y_1 - y_c)}{r_1^5} & \frac{\mu_0}{4\pi} \left( \frac{3(z_1 - z_c)^2}{r_1^5} - \frac{1}{r_1^3} \right) \\
+\frac{\mu_0}{4\pi} \frac{3(z_2 - z_c)(x_2 - x_c)}{r_2^5} & \frac{\mu_0}{4\pi} \frac{3(z_2 - z_c)(y_2 - y_c)}{r_2^5} & \frac{\mu_0}{4\pi} \left( \frac{3(z_2 - z_c)^2}{r_2^5} - \frac{1}{r_2^3} \right) \\
+\vdots & \vdots & \vdots \\
+\frac{\mu_0}{4\pi} \frac{3(z_N - z_c)(x_N - x_c)}{r_N^5} & \frac{\mu_0}{4\pi} \frac{3(z_N - z_c)(y_N - y_c)}{r_N^5} & \frac{\mu_0}{4\pi} \left( \frac{3(z_N - z_c)^2}{r_N^5} - \frac{1}{r_N^3} \right)
+\end{bmatrix}}_{\text{Jacobiana}}
+\underbrace{
+\begin{bmatrix}
+m_x \\
+m_y \\
+m_z
+\end{bmatrix}}_{\text{Parâmetros}}
+=
+\underbrace{
+\begin{bmatrix}
+b_{z_1} \\
+b_{z_2} \\
+\vdots \\
+b_{z_N}
+\end{bmatrix}}_{\text{Observação}}
+\]
+<p class="fragment">$$\mathbf{Am=d}$$</p>
+
+===============================================================================
+# Estimativa por Mínimos Quadrados
+
+<p class="text-left">Minimizamos a função de erro:</p>
+
+$$\Gamma(\mathbf{m}) = \|\mathbf{d}^{o}-\mathbf{A}\mathbf{m}\|^2=(\mathbf{d}^{o}-\mathbf{A}\mathbf{m})^T(\mathbf{d}^{o}-\mathbf{A}\mathbf{m})$$
+<p class="text-left">O que leva às equações normais:</p>
+$$\mathbf{A}^T\mathbf{A}\mathbf{m} = \mathbf{A}^T\mathbf{d}^{o}$$
+
+<p class="fragment">A solução fornece o momento de dipolo estimado $\mathbf{m}$</p>
 
 
 ===============================================================================
-# Conclusions
-<div class="text-left">
+# Inversão Híbrida
 
-- Magnetic microscopy lets us investigate magnetism at the grain scale
-</div>
+<div class="fragment text-left">
 
-<div class="text-left">
-
-- <strong>Magali</strong> brings automation, reproducibility, and speed to these analyses
+- **Exploramos** a estrutura matemática do problema: para uma localização fixa ($\mathbf{v}$), o campo magnético depende linearmente do momento magnético ($\mathbf{m}$)
 
 </div>
+<div class="fragment text-left">
+
+- **Evitamos** o acoplamento direto de parâmetros com ordens de magnitude muito diferentes. Em inversões simultâneas, a diferença entre a escala da localização (**10⁻⁶ m**) e do momento (**10⁻¹³ Am²**) dificulta a convergência de algoritmos de busca direta
+
+</div>
+<div class="fragment text-left">
+
+- **Garantimos** um problema bem escalonado ao separar a inversão em grupos fisicamente homogêneos, dispensando a necessidade de normalizações explícitas de parâmetros
+
+</div>
+
+===============================================================================
+# Inversão Híbrida
+
+<div class="fragment text-left">
+
+- **Implementamos** uma estratégia onde a inversão linear para o momento dipolar $\mathbf{m}$ é **aninhada** dentro da inversão não-linear de Levenberg-Marquardt (LM) para a localização $\mathbf{v}$
+
+</div>
+<div class="fragment text-left">
+
+- **Atualizamos** os parâmetros em cada iteração seguindo este ciclo:
+  1. Fixamos uma localização de teste ($\mathbf{v}$), obtida utilizando Deconvolução de Euler
+  2. Estimamos o momento ($\mathbf{m}$) para aquela posição
+  3. Atualizamos a localização ($\mathbf{v}$) com base no gradiente do erro
+
+</div>
+
+===============================================================================
+# Otimização via Levenberg-Marquardt
+
+<div class="fragment text-left">
+
+- **Selecionamos** o algoritmo LM por ser um método baseado em gradiente, torna-se melhorr optimizado quando comparado a métodos que independem de derivadas (como Nelder-Mead) para problemas suaves e diferenciáveis
+
+</div>
+<div class="fragment text-left">
+
+- **Minimizamos** a função de função objetivo (*misfit*) de mínimos quadrados $\Psi(\mathbf{v})$:
+
+$$\Psi(\mathbf{v}) = \| \mathbf{d}^o - \mathbf{d}(\mathbf{v}) \|^2$$
+
+- $\mathbf{d}^o$ dados observados
+- $\mathbf{d}(\mathbf{v})$ dados preditos
+
+</div>
+<div class="footnote-center">
+
+[Souza-Junior et al. (2025)](https://eartharxiv.org/repository/view/8869/)
+
+</div>
+
+===============================================================================
+# Inversão Híbrida
+
+<div class="fragment text-left">
+
+- **Partimos** da estimativa inicial de posição $\mathbf{v}$ obtida via ED e **realizamos** uma inversão linear inicial para o momento $\mathbf{m}$.
+
+</div>
+<div class="fragment text-left">
+
+- **Atualizamos** a localização resolvendo o sistema amortecido para o incremento $\Delta \mathbf{v}$:
+
+$$\left( \mathbf{J}^T \mathbf{J} + \alpha \cdot \mathrm{diag}(\mathbf{J}^T \mathbf{J}) \right) \Delta\mathbf{v} = \mathbf{J}^T \big( \mathbf{d}^o - \mathbf{d}(\mathbf{v}) \big)$$
+
+- $\mathbf{J}^T \mathbf{J}$: aproximação da Hessiana
+- $\alpha \cdot \mathrm{diag}(\mathbf{J}^T \mathbf{J})$: amortecimento escalonado pela curvatura local
+- $(\mathbf{d}^o - \mathbf{d}(\mathbf{v}))$: vetor de resíduos
+</div>
+
+===============================================================================
+# Matriz Jacobiana
+
+<div class="text-left">
+
+- **Derivamos** analiticamente o modelo direto do dipolo magnético para construir a matriz Jacobiana:
+
+<p>
+\[
+\mathbf{J} =
+\begin{bmatrix}
+\frac{\partial b_{z,1}}{\partial x_c} & \frac{\partial b_{z,1}}{\partial y_c} & \frac{\partial b_{z,1}}{\partial z_c} \\
+\frac{\partial b_{z,2}}{\partial x_c} & \frac{\partial b_{z,2}}{\partial y_c} & \frac{\partial b_{z,2}}{\partial z_c} \\
+\vdots & \vdots & \vdots \\
+\frac{\partial b_{z,N}}{\partial x_c} & \frac{\partial b_{z,N}}{\partial y_c} & \frac{\partial b_{z,N}}{\partial z_c}
+\end{bmatrix}
+\]
+</p>
+
+</div>
+
+===============================================================================
+<p>
+\[
+\frac{\partial b_z}{\partial x_c} =
+\frac{\mu_0}{4\pi}
+\Big[
+m_x \left( \frac{15 \Delta z \Delta x^2}{r^7} - \frac{3 \Delta z}{r^5} \right)
++ m_y \frac{15 \Delta z \Delta y \Delta x}{r^7}
++ m_z \left( \frac{15 \Delta z^2 \Delta x}{r^7} - \frac{3 \Delta x}{r^5} \right)
+\Big]
+\]
+</p>
+<p>
+\[
+\frac{\partial b_z}{\partial y_c} =
+\frac{\mu_0}{4\pi}
+\Big[
+m_x \frac{15 \Delta z \Delta x \Delta y}{r^7}
++ m_y \left( \frac{15 \Delta z \Delta y^2}{r^7} - \frac{3 \Delta z}{r^5} \right)
++ m_z \left( \frac{15 \Delta z^2 \Delta y}{r^7} - \frac{3 \Delta y}{r^5} \right)
+\Big]
+\]
+</p>
+<p>
+\[
+\frac{\partial b_z}{\partial z_c} =
+\frac{\mu_0}{4\pi}
+\Big[
+m_x \left( \frac{15 \Delta x \Delta z^2}{r^7} - \frac{3 \Delta x}{r^5} \right)
++ m_y \left( \frac{15 \Delta y \Delta z^2}{r^7} - \frac{3 \Delta y}{r^5} \right)
++ m_z \left( \frac{15 \Delta z^3}{r^7} - \frac{9 \Delta z}{r^5} \right)
+\Big]
+\]
+</p>
+<div class="footnote-center">
+
+O uso de derivadas analíticas em vez de diferenças finitas garante maior precisão e eficiência computacional na convergência
+
+</div>
+
+===============================================================================
+# Parâmetro de Marquardt 
+
+<div class="text-left">
+
+- **Inicializamos** o parâmetro de Marquardt ($\alpha$) de forma não arbitrária, baseando-nos na mediana da diagonal da Hessiana para refletir o condicionamento do sistema:
+
+$$\alpha = S \cdot \text{median}(\text{diag}(\mathbf{J}^T\mathbf{J})) \quad \text{, } S = 10^{-20}$$
+
+</div>
+
+===============================================================================
+$$\left( \mathbf{J}^T \mathbf{J} + \alpha \cdot \mathrm{diag}(\mathbf{J}^T \mathbf{J}) \right) \Delta\mathbf{v} = \mathbf{J}^T \big( \mathbf{d}^o - \mathbf{d}(\mathbf{v}) \big)$$
+
+<div class="fragment text-left">
+
+- **Ajustamos** $\alpha$ dinamicamente via estratégia de região de confiança:
+  - **Sucesso (redução do erro):** aceitamos $\Delta \mathbf{v}$ e dividimos $\alpha$ por 10 (tendendo a Gauss-Newton)
+  - **Falha (aumento do erro):** rejeitamos $\Delta \mathbf{v}$ e multiplicamos $\alpha$ por 10 (tendendo a Steepest Descent)
+
+</div>
+
+===============================================================================
+# Estabilidade e Ciclo de Convergência
+
+<div class="fragment text-left">
+
+- **Limitamos** o deslocamento máximo por iteração ($\|\Delta \mathbf{v}\| \le 10\mu m$) para evitar atualizações que não façam sentido fisicamente e garantir que a solução permaneça dentro da janela de dados
+
+</div>
+<div class="fragment text-left">
+
+- **Estruturamos** a convergência em dois loops:
+  - **Loop Interno:** refina a posição $\mathbf{v}$ via LM com momento fixo
+  - **Loop Externo:** reestima o momento $\mathbf{m}$ via inversão linear com posição fixa
+
+</div>
+<div class="fragment text-left">
+
+- **Finalizamos** o processo quando a redução relativa do resíduo atinge a tolerância de $10^{-2}$, obtendo uma solução robusta mesmo com parâmetros de escalas físicas disparatadas
+
+</div>
+
+===============================================================================
+# Resumo
+
+<div class="fragment text-left">
+
+1. **Inicialização:**
+   - **Partimos** da estimativa de Euler para a posição inicial  ($\mathbf{v}$)
+   - **Definimos** a tolerância de convergência e **inicializamos** o amortecimento ($\alpha$) com base na curvatura da Hessiana aproximada
+
+</div>
+
+===============================================================================
+<div class="text-left">
+
+2. **Inversão Acoplada (Loop Externo):**
+   - **Alternamos** entre a estimativa do momento e o refinamento da posição até que a redução da função objetivo global seja inferior à tolerância definida
+
+</div>
+<div class="fragment text-left">
+
+   - **A) Estimativa linear do momento:** com a posição $\mathbf{v}$ fixa, **calculamos** analiticamente o momento $\mathbf{m}$ via mínimos quadrados
+   - **B) Atualização não-linear da posição:** com o momento $\mathbf{m}$ fixo, **refinamos** a localização $\mathbf{v}$ através do loop interno de Levenberg-Marquardt
+   - **C) Misfit:** calculamos o dado predito e **avaliamos** o misfit global
+
+</div>
+
+===============================================================================
+<div class="text-left">
+
+3. **Convergência:**
+   - **Finalizamos** o algoritmo quando a melhoria entre iterações sucessivas se torna insignificante, extraindo os vetores de posição e momento finais da fonte
+
+</div>
+
+===============================================================================
+# Implementação de Software
+
+<div class="fragment text-left">
+
+- **Integramos** o pacote ao projeto **Fatiando a Terra**, uma iniciativa *open-source* nascida no Brasil (USP, 2008) e referência global em geofísica
+
+</div>
+<div class="fragment text-left">
+
+- **Desenvolvemos** o Magali (Licença BSD 3) como uma solução ponta a ponta para microscopia magnética:
+  - Filtragem avançada de dados
+  - Detecção automática de partículas
+  - Inversão acoplada
+  - modelagem direta
+
+</div>
+
+===============================================================================
+# Arquitetura 
+
+<div class="fragment text-left">
+
+- **Estruturamos** a ferramenta de forma modular
+</div>
+
+<div class="fragment text-left">
+
+- **Aceleramos** os gargalos computacionais utilizando **Numba**
+  - A compilação *Just-in-Time* (JIT) e a vetorização permitem que a nossa inversão processe mapas de alta resolução com desempenho melhor
+
+</div>
+
+===============================================================================
+# Robustez e Pipeline de CI/CD
+
+<div class="fragment text-left">
+
+- **Integração Contínua (CI):** implementamos um pipeline automatizado que executa nossos de **testes de unidade** a cada *commit*, assegurando 100% de cobertura das funções presentes no pacote
+
+</div>
+<div class="fragment text-left">
+
+- **Regressão Visual Automática:** validamos a integridade dos modelos físicos comparando os outputs gráficos **pixel a pixel**. Isso garante que atualizações no código não alterem a consistência dos resultados 
+
+</div>
+
+===============================================================================
+# Robustez e Pipeline de CI/CD
+
+<div class="text-left">
+
+- **Matriz de Build Multiplataforma:** Utilizamos **GitHub Actions** para disparar rotinas de verificação em Linux, Windows e macOS simultaneamente, garantindo estabilidade cross-platform
+
+</div>
+<div class="fragment text-left">
+
+- **Entrega Contínua (CD):** O fluxo de trabalho será preparado para **deploy automatizado** no PyPI e conda-forge, assegurando que as melhorias cheguem ao usuário final de forma rápida e segura
+
+</div>
+
+===============================================================================
+# Distribuição e Ciência Aberta
+
+<div class="fragment text-left">
+
+- **Adotamos** os pilares da **Ciência Aberta**: desenvolvimento transparente no GitHub, *issue tracking* público e documentação completa com tutoriais replicáveis
+
+</div>
+
+<div class="fragment text-left">
+
+- **Facilitaremos** o acesso global da nossa futura versão v0.1 através dos gerenciadores padrão da comunidade científica:
+  * **PyPI** (Python Package Index)
+  * **conda-forge** (ambientes reprodutíveis)
+
+</div>
+
+===============================================================================
+<!-- .slide: data-background-opacity="1" data-background-image="assets/github.png"  data-background-size="contain" data-background-color="#262626" -->
+
+===============================================================================
+<!-- .slide: data-background-opacity="1" data-background-image="assets/github_1.png"  data-background-size="contain" data-background-color="#262626" -->
+
+===============================================================================
+<!-- .slide: data-background-opacity="1" data-background-image="assets/github_readme.png"  data-background-size="contain" data-background-color="#262626" -->
+
+===============================================================================
+<!-- .slide: data-background-opacity="1" data-background-image="assets/pull_requests.png"  data-background-size="contain" data-background-color="#262626" -->
+
+===============================================================================
+<!-- .slide: data-background-opacity="1" data-background-image="assets/pull_request_details.png"  data-background-size="contain" data-background-color="#262626" -->
+
+===============================================================================
+<!-- .slide: data-background-opacity="1" data-background-image="assets/pull_request_details_1.png"  data-background-size="contain" data-background-color="#262626" -->
+
+===============================================================================
+<!-- .slide: data-background-opacity="1" data-background-image="assets/pull_request_details_2.png"  data-background-size="contain" data-background-color="#262626" -->
+
+===============================================================================
+<!-- .slide: data-background-opacity="1" data-background-image="assets/checks.png"  data-background-size="contain" data-background-color="#262626" -->
+
+===============================================================================
+# Sumário
+
+<ul style="list-style: none">
+  <li><b>Paleomagnetismo</b></li>
+  <li><b>Microscopia magnética</b></li>
+  <li>
+    <b>Métodos</b>
+    <ul style="list-style: none">
+      <li>Análise do Fluxo de Trabalho</li>
+      <li>Fundamentação Teórica</li>
+      <li>Desenvolvimento de software</li>
+    </ul>
+  </li>
+  <li style="color: red !important;"><b>Comparação de Performance e Acurácia</b></li>  
+  <li><b>Demonstração em dados reais de microscopia magnética</b></li>
+  <li><b>Conclusões</b></li>
+</ul>
+
+===============================================================================
+<div class="text-left">
+
+- Avaliamos o **Magali** contra o algoritmo de inversão não-linear de **Souza-Junior et al. (2025)**.
+
+</div>
+<div class="fragment text-left">
+
+- Definimos dois cenários sintéticos com diferentes resoluções de malha ($\Delta \in [0.3, 2.0]~\mu\text{m}$):
+  1. **Modelo "Simple":** Um único dipolo isolado
+  2. **Modelo "1-Interf.":** Um dipolo alvo + uma fonte interferente próxima
+
+</div>
+<div class="fragment text-left">
+
+- **Garantimos condições justas:** ambos os métodos partem da mesma estimativa inicial via Deconvolução de Euler ($\eta=3$) e o nível de base é previamente removido
+
+</div>
+
+===============================================================================
+# Métricas de Avaliação
+
+<div class="fragment text-left">
+
+- **Quantificamos** o desempenho em função do número de pontos de dados ($N$) realizando **5 inversões independentes** por resolução para obter médias estáveis
+
+</div>
+<div class="fragment text-left">
+
+- Analisamos quatro pilares fundamentais:
+  * **Tempo de Execução:** custo computacional médio
+  * **Erro de Localização ($E_r$):** distância euclidiana entre a posição real e a estimada
+  * **Erro de Intensidade ($E_I$):** diferença na magnitude do momento magnético
+  * **Erro Angular ($\theta$):** desvio de orientação (direção) entre o vetor real e o recuperado
+
+</div>
+
+===============================================================================
+<!-- .slide: data-background-opacity="1" data-background-image="assets/comparison_result.png"  data-background-size="contain" data-background-color="#262626" -->
+
+===============================================================================
+# Sumário
+
+<ul style="list-style: none">
+  <li><b>Paleomagnetismo</b></li>
+  <li><b>Microscopia magnética</b></li>
+  <li>
+    <b>Métodos</b>
+    <ul style="list-style: none">
+      <li>Análise do Fluxo de Trabalho</li>
+      <li>Fundamentação Teórica</li>
+      <li>Desenvolvimento de software</li>
+    </ul>
+  </li>
+  <li><b>Comparação de Performance e Acurácia</b></li>  
+  <li  style="color: red !important;"><b>Demonstração em dados reais de microscopia magnética</b></li>
+  <li><b>Conclusões</b></li>
+</ul>
+
+===============================================================================
+# Aplicação em Dados Reais
+
+<div class="fragment text-left">
+
+- Demonstramos a robustez do Magali aplicando-o a três conjuntos independentes de dados reais com diferentes características geológicas e magnéticas:
+
+</div>
+
+<div class="fragment text-left">
+
+  1. **Espeleotema (Caverna Wintimdouine):** sinal fraco, poucas partículas
+
+</div>
+<div class="fragment text-left">
+
+  2. **Cerâmica Arqueológica:** densidade moderada, partículas SD-PSD estáveis com claro sinal dipolar
+
+</div>
+<div class="fragment text-left">
+
+  3. **Basalto:** alta densidade, partículas muito próximas com forte contribuição multidomínio (cenário de altíssima complexidade)
+
+</div>
+
+
+
+<div class="fragment text-left">
+
+- Todo o processamento foi realizado com **menos de 50 linhas** de código
+
+</div>
+
+===============================================================================
+
+<section>
 <style>
-  .fragment .inline{
-    display: inline !important;
+  pre.compact code {
+    line-height: 1.0em !important;
+    font-size: 1.3em !important;
+  }
+  .fragment {
+    display: block;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+  }
+  .block-space {
+    margin-top: -1.0em !important;
   }
 </style>
+<pre class="compact"><code class="python" data-trim data-noescape>
+<span>
+import magali as mg
+import numpy as np
+import matplotlib.pyplot as plt
+import skimage.exposure
+import ensaio
+import harmonica as hm
+
+data_paths = {
+    # Use the Ensaio package to fetch the speleothem dataset from the internet
+    "speleothem": ensaio.fetch_morroco_speleothem_qdm(
+        version=1,
+        file_format="matlab",
+    ),
+    "ceramic": "data/ceramic/NRM1.mat",
+    "basalt": "data/basalt/NRM1.mat",
+}
+</code></pre>
+</section>
+
+===============================================================================
+
+<section>
+<style>
+  pre.compact code {
+    line-height: 1.0em !important;
+    font-size: 1.3em !important;
+  }
+  .fragment {
+    display: block;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+  }
+  .block-space {
+    margin-top: -1.0em !important;
+  }
+</style>
+<pre class="compact"><code class="python" data-trim data-noescape>
+<span>
+# Repeat the processing for each dataset but using slightly different parameters
+size_ranges = {"speleothem": [20, 150], "ceramic": [10, 150], "basalt": [10, 30]}
+detection_thresholds = {"speleothem": 0.02, "ceramic": 0.02, "basalt": 0.002}
+datasets, locations, dipole_moments, bounding_boxes = {}, {}, {}, {}
+</code></pre>
+</section>
+
+===============================================================================
+
+<section>
+<style>
+  pre.compact code {
+    line-height: 1.0em !important;
+    font-size: 1.3em !important;
+  }
+  .fragment {
+    display: block;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+  }
+  .block-space {
+    margin-top: -1.0em !important;
+  }
+</style>
+<pre class="compact"><code class="python" data-trim data-noescape>
+<span>
+for name in ["speleothem", "ceramic", "basalt"]:
+    # Use Magali to load the data from Harvard's QDM Matlab file format
+    datasets[name] = mg.read_qdm_harvard(data_paths[name])
+    # Upward continue the data by 5 microns using the Harmonica package
+    height_difference = 5
+    data_up = (
+        hm.upward_continuation(datasets[name], height_difference)
+        .assign_attrs(datasets[name].attrs)
+        .assign_coords(x=datasets[name].x, y=datasets[name].y)
+        .assign_coords(z=datasets[name].z + height_difference)
+        .rename("bz")
+    )
+    # Calculate data derivatives and TGA
+    data_tga = mg.total_gradient_amplitude_grid(data_up)
+    # Stretch the TGA contrast to highlight weak sources
+    data_stretched = skimage.exposure.rescale_intensity(
+        data_tga,
+        in_range=tuple(np.percentile(data_tga, (1, 99))),
+    )
+</code></pre>
+</section>
+
+===============================================================================
+<section>
+<style>
+  pre.compact code {
+    line-height: 1.0em !important;
+    font-size: 1.3em !important;
+  }
+  .fragment {
+    display: block;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+  }
+  .block-space {
+    margin-top: -1.0em !important;
+  }
+</style>
+<pre class="compact"><code class="python" data-trim data-noescape>
+<span>
+    # Use the LoG to detect the sources in the stretched TGA
+    bounding_boxes[name] = mg.detect_anomalies(
+        data_stretched,
+        size_range=size_ranges[name],  # μm
+        detection_threshold=detection_thresholds[name],
+        border_exclusion=2,
+    )
+    # Run the non-linear inversion to estimate dipole moments and locations
+    results = mg.iterative_nonlinear_inversion(
+        data_up, bounding_boxes[name], copy_data=True
+    )
+    locations[name] = results[1]
+    dipole_moments[name] = results[2]
+</code></pre>
+</section>
+
+===============================================================================
+
+O processamento automatizado identificou com sucesso:
+  - **57 fontes** no Espeleotema
+  - **397 fontes** na Cerâmica
+  - **661 fontes** no Basalto
+
+</div>
+
+===============================================================================
+<!-- .slide: data-background-image="assets/example_result.png"  data-background-size="contain" data-background-color="#262626" -->
+
+===============================================================================
+# Sumário
+
+<ul style="list-style: none">
+  <li><b>Paleomagnetismo</b></li>
+  <li><b>Microscopia magnética</b></li>
+  <li>
+    <b>Métodos</b>
+    <ul style="list-style: none">
+      <li>Análise do Fluxo de Trabalho</li>
+      <li>Fundamentação Teórica</li>
+      <li>Desenvolvimento de software</li>
+    </ul>
+  </li>
+  <li><b>Comparação de Performance e Acurácia</b></li>  
+  <li><b>Demonstração em dados reais de microscopia magnética</b></li>
+  <li style="color: red !important;"><b>Conclusões</b></li>
+</ul>
+
+===============================================================================
+# Contribuições Metodológicas
+
+<div class="fragment text-left">
+
+- **Consolidamos** um fluxo completo de inversão (detecção, Euler e refinamento) em um framework unificado, extensível e de código aberto
+
+</div>
+
+<div class="fragment text-left">
+
+- **Otimizamos** a inversão não-linear através da estratégia híbrida com o algoritmo de **Levenberg-Marquardt**, utilizando derivadas analíticas do modelo direto
+
+</div>
+
+<div class="fragment text-left">
+
+- **Eliminamos** problemas de escalonamento numérico e instabilidade ao desacoplar os parâmetros de momento (linear) e posição (não-linear), superando métodos de busca direta
+
+</div>
+
+===============================================================================
+# Benchmarking
+
+<div class="fragment text-left">
+
+- Alcançamos **ganhos de eficiência superiores a 90%** em comparação ao método de referência (Souza-Junior et al., 2025). O tempo de execução mostrou-se **insensível à densidade de dados**, mantendo-se em níveis **abaixo de 1 segundo**
+
+</div>
+
+<div class="fragment text-left">
+
+- Elevamos a **precisão** em cenários complexos (fontes interferentes):
+  * Redução de **60% no erro angular** para o modelo simples
+  * Redução de **40% no erro angular** no caso de fonte interferente
+
+</div>
+
+===============================================================================
+# Ciência Aberta
+
+<div class="fragment text-left">
+
+- **Democratizaremos** o acesso a ferramentas de ponta para a comunidade de paleomagnetistas, reduzindo barreiras técnicas via **PyPI** e **conda-forge**
+
+</div>
+
+<div class="fragment text-left">
+
+- **Estabelecemos** um padrão de reprodutibilidade seguindo os princípios **FAIR** (**F**indable, **A**ccessible, **I**nteroperable, **R**eusable), integrado ao ecossistema **Fatiando a Terra**
+
+</div>
+
+<div class="fragment text-left">
+
+- **Mitigamos** o isolamento metodológico através de desenvolvimento transparente, testes automatizados e documentação para novos usuários e pesquisadores avançados
+
+</div>
+
+===============================================================================
+# Limitações
+
+<div class="fragment text-left">
+
+- O método pressupõe aproximações dipolares e isolamento via janelamento
+
+</div>
+<div class="fragment text-left">
+
+- Fontes fortemente não-dipolares ou clusters densos ainda são desafios
+
+</div>
+
+===============================================================================
+# Trabalhos Futuros
 
 <div class="text-left">
 
-- It integrates open tools, FAIR data, and transparent workflows for magnetic research
+- **Projetamos** para o futuro do Magali:
 
-</div>
+  <div class="fragment text-left">
 
+  - Implementação de expansão multipolar
 
-===============================================================================
-# Future work
-<div class="fragment text-left">
+  </div>
+  <div class="fragment text-left">
 
-- Provide, discuss, and establish <b>data conventions</b> for magnetic microscopy
-</div>
+  - Módulos de projeção estereográfica e filtragem de inversão
 
-<div class="fragment text-left">
+  </div>
+  <div class="fragment text-left">
 
-- Write functions to read data from <b>different microscope systems</b>
+  - Rotinas avançadas para detecção automática de fontes
 
-</div>
+  </div>
+  <div class="fragment text-left">
 
-<div class="fragment text-left">
+  - Incluir Magali no **conda-forge** e **PyPi**
 
-- Add more datasets to <b>Ensaio</b> for testing and <b>community use</b>
+  </div>
 
-</div>
-
-<div class="fragment text-left">
-
-- Release <strong>Magali 1.0</strong> with improved docs and structure
 </div>
 
 ===============================================================================
+<div class="quote">
 
-# Acknowledgements
+**Magali** une **rigor matemático** e **ciência aberta** para consolidar o **paleomagnetismo de escala de grão** como uma técnica rápida, acessível e totalmente reproduzível
+
+</div>
+
+===============================================================================
+# Agradecimentos
 
 <img src="assets/capes.png" height=100%>
 
 
 ===============================================================================
 <!-- .slide: data-background-opacity="0.2" data-background-image="assets/magali-logo.png"  data-background-size="contain" data-background-color="#262626" -->
-# Obrigado! ¡Gracias! Thank you!
+# Obrigado!
 
 <div class="row">
 <div class="col">
 <i class="fas fa-comments"></i>
 <br>
-Contact:
+Contato:
 <a>yagomcastro1@gmail.com</a>
 
 <i class="fab fa-github"></i>
 <br>
-Source code for this presentation:
+Código-fonte desta apresentação:
 <br>
-[github.com/YagoMCastro/sbgf-magali-presentation](https://github.com/YagoMCastro/sbgf-magali-presentation)
+[github.com/yagomcastro/msc-presentation](https://github.com/yagomcastro/msc-presentation)
 
 <i class="fab fa-creative-commons"></i><i class="fab fa-creative-commons-by"></i>
 <br>
-The contents of this presentation are
-licensed under the
+O conteúdo desta apresentação está licenciado sob a
 <br>
-[Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
+[Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/)
 
 </div>
 <div class="col">
