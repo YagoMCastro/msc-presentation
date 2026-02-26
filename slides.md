@@ -352,6 +352,47 @@ Modelagem e processamento de dados de microscopia magnética
 </ul>
 
 ===============================================================================
+# Análise do Fluxo de Trabalho
+
+<div class="text-left">
+
+**1. Detecção e separação automática de fontes**
+- **Calcula** a Amplitude do Gradiente Total (TGA) do campo vertical $b_z$ e ajusta o contraste.
+- **Identifica** as partículas automaticamente usando o algoritmo *Laplacian of Gaussian* (LoG) para segmentar espacialmente as fontes.
+
+</div>
+
+<div class="fragment text-left">
+
+**2. Estratégia progressiva de remoção de sinal**
+- **Modela** as anomalias mais fortes primeiro e remove suas contribuições progressivamente.
+- **Simplifica** o campo magnético para permitir que fontes mais fracas emerjam, aumentando a precisão da localização, apesar do maior custo computacional.
+
+</div>
+
+===============================================================================
+# Etapas da Inversão Iterativa
+
+<div class="fragment text-left">
+
+- **a) Estimativa de localização:** Calcula a posição 3D inicial da fonte (para a janela atual) resolvendo um sistema linear via Deconvolução de Euler.
+
+</div>
+<div class="fragment text-left">
+
+- **b) Inversão linear do momento magnético:** Estima o vetor dipolar inicial $\mathbf{m}$ resolvendo um problema de mínimos quadrados, assumindo a posição previamente calculada como fixa.
+
+</div>
+<div class="fragment text-left">
+
+- **c) Inversão não-linear híbrida:** Refina simultaneamente a posição $\mathbf{v}$ (via esquema Gauss-Newton/Levenberg-Marquardt) e reestima o momento $\mathbf{m}$ a cada iteração até a convergência.
+
+</div>
+<div class="fragment text-left">
+
+- **d) Remoção do sinal:** Subtrai o sinal do dipolo modelado dos dados observados, gerando um mapa de resíduos que será utilizado nos próximos ciclos.
+
+</div>
 
 ===============================================================================
 <section>
