@@ -357,40 +357,230 @@ Modelagem e processamento de dados de microscopia magnética
 <div class="text-left">
 
 **1. Detecção e separação automática de fontes**
-- **Calcula** a Amplitude do Gradiente Total (TGA) do campo vertical $b_z$ e ajusta o contraste.
-- **Identifica** as partículas automaticamente usando o algoritmo *Laplacian of Gaussian* (LoG) para segmentar espacialmente as fontes.
+- **Calcula** a Amplitude do Gradiente Total (TGA) do campo vertical $b_z$ e ajusta o contraste
+- **Identifica** as partículas automaticamente usando o algoritmo *Laplacian of Gaussian* (LoG) para segmentar espacialmente as fontes
 
 </div>
 
-<div class="fragment text-left">
+===============================================================================
+# Análise do Fluxo de Trabalho
+
+<div class="text-left">
 
 **2. Estratégia progressiva de remoção de sinal**
-- **Modela** as anomalias mais fortes primeiro e remove suas contribuições progressivamente.
-- **Simplifica** o campo magnético para permitir que fontes mais fracas emerjam, aumentando a precisão da localização, apesar do maior custo computacional.
+
+Para cada janela detectada:
+
+- **Modela** as anomalias mais fortes primeiro e remove suas contribuições progressivamente
+- **Simplifica** o campo magnético para permitir que fontes mais fracas emerjam, aumentando a precisão da localização, apesar do maior custo computacional
 
 </div>
 
 ===============================================================================
 # Etapas da Inversão Iterativa
 
-<div class="fragment text-left">
+<div class="text-left">
 
-- **a) Estimativa de localização:** Calcula a posição 3D inicial da fonte (para a janela atual) resolvendo um sistema linear via Deconvolução de Euler.
-
-</div>
-<div class="fragment text-left">
-
-- **b) Inversão linear do momento magnético:** Estima o vetor dipolar inicial $\mathbf{m}$ resolvendo um problema de mínimos quadrados, assumindo a posição previamente calculada como fixa.
+- **a) Estimativa de localização:** calcula a posição 3D inicial da fonte (para a janela atual) resolvendo um sistema linear via Deconvolução de Euler
 
 </div>
 <div class="fragment text-left">
 
-- **c) Inversão não-linear híbrida:** Refina simultaneamente a posição $\mathbf{v}$ (via esquema Gauss-Newton/Levenberg-Marquardt) e reestima o momento $\mathbf{m}$ a cada iteração até a convergência.
+- **b) Inversão linear do momento magnético:** estima o vetor de momento de dipolo inicial $\mathbf{m}$ resolvendo um problema de mínimos quadrados, assumindo a posição previamente calculada como fixa
 
 </div>
 <div class="fragment text-left">
 
-- **d) Remoção do sinal:** Subtrai o sinal do dipolo modelado dos dados observados, gerando um mapa de resíduos que será utilizado nos próximos ciclos.
+- **c) Inversão não-linear híbrida:** refina simultaneamente a posição $\mathbf{v}$ (via esquema Levenberg-Marquardt) e reestima o momento $\mathbf{m}$ a cada iteração até a convergência
+
+</div>
+<div class="fragment text-left">
+
+- **d) Remoção do sinal:** subtrai o sinal do dipolo modelado dos dados observados, gerando um mapa de resíduos que será utilizado nos próximos ciclos
+
+</div>
+
+===============================================================================
+# Derivadas e TGA
+
+<div class="fragment text-left">
+
+- **Calculamos** a Amplitude do Gradiente Total (TGA) a partir do campo magnético vertical $b_z$, definida como a norma do vetor gradiente:
+
+$$||\vec{\mathbf{\nabla}}f(x, y, z)|| = \sqrt{(\partial_x f)^2 + (\partial_y f)^2 + (\partial_z f)^2}$$
+
+</div>
+
+===============================================================================
+# Derivadas e TGA
+
+<div class="text-left">
+
+- **Aproximamos** as derivadas horizontais utilizando um esquema de **diferenças finitas centrais** de segunda ordem (assumindo espaçamento uniforme $\Delta x$):
+
+$$\partial_x f(x, y, z) \approx \frac{f(x + \Delta x, y, z) - f(x - \Delta x, y, z)}{2 \Delta x}$$
+
+$$\partial_y f(x, y, z) \approx \frac{f(x, y + \Delta y, z) - f(x , y + \Delta y, z)}{2 \Delta y}$$
+
+</div>
+<div class="fragment text-left">
+
+- **Minimizamos** a amplificação de ruídos de curto comprimento de onda ao optar por diferenças finitas em vez da Transformada Rápida de Fourier (FFT) para as derivadas $x$ e $y$
+
+</div>
+
+===============================================================================
+# Cálculo em Z
+
+<div class="fragment text-left">
+
+- **Obtemos** as variações no eixo vertical ($f(z + \Delta z)$ e $f(z - \Delta z)$) aplicando **continuação para cima e para baixo** no domínio do número de onda
+
+</div>
+
+<div class="footnote-center">
+
+[Saleh et al. (2012)](https://journals.savba.sk/index.php/cgg/article/view/5158/1272)
+
+</div>
+
+===============================================================================
+# Vantagens do TGA
+
+<ul>
+  <li class="text-left fragment"><b>Gera</b> valores estritamente positivos</li>
+  <li class="text-left fragment"><b>Centraliza</b> os picos diretamente sobre as fontes magnéticas</li>
+  <li class="text-left fragment"><b>Minimiza</b> a dependência da direção de magnetização original</li>
+  <li class="text-left fragment"><b>Realça</b> feições locais e <b>suprime</b> o <i>background</i> regional</li>
+  <li class="text-left fragment"><b>Atua</b> como um <b>filtro passa-alta</b>, removendo ruídos de longo comprimento de onda</li>
+</ul>
+
+===============================================================================
+# Realce de Contraste
+
+- **Objetivo**: reescalonar os valores de TGA para destacar sinais fracos e fortes 
+- **Operação**: transformação por pixel para normalizar os dados:
+
+<p>
+\[
+\text{TGA}_{\text{rescaled}} = 2 \left( \frac{\text{TGA} - v_{\min}}{v_{\max} - v_{\min}} \right) - 1
+\]
+</p>
+
+<ul>
+<li>$ v_{\text{min}} = 1^\text{º} $ percentil</li>
+<li>$ v_{\text{max}} = 99^\text{º} $ percentil</li>
+<li><b>Saída:</b> valores reescalados para o intervalo $[0, 1]$</li>
+</ul>
+
+===============================================================================
+
+# Por que usar limites por percentil?
+
+- <!-- .element: class="fragment" -->
+  **Escalonamento robusto**  
+    Ignora outliers extremos (ex.: ruído do sensor)
+
+- <!-- .element: class="fragment" -->
+  **Validação empírica**  
+    Funciona bem para dados reais de microscopia magnética
+
+- <!-- .element: class="fragment" -->
+  **Faixa dinâmica**  
+    Garante a visualização de sinais fracos e fortes
+
+===============================================================================
+
+<div class="row">
+<div class="col"><img src="assets/data_up.png" style="width: 100%" ></div>
+<div class="col"><img src="assets/stretched.png" style="width: 100%" ></div>
+</div>
+
+===============================================================================
+
+# Filtro LoG
+
+<div class="text-left">
+
+- **Utilizamos** o algoritmo *Laplacian of Gaussian* (LoG) para identificar os picos de intensidade (centros das partículas)
+
+</div>
+
+===============================================================================
+
+# Filtro LoG
+
+<div class="fragment text-left">
+
+- **Suavizamos** a imagem primeiro com um kernel Gaussiano para eliminar ruídos de alta frequência:
+
+$$G(x, y; \sigma) = \frac{1}{2\pi\sigma^2} e^{-\frac{x^2 + y^2}{2\sigma^2}}$$
+
+</div>
+
+<div class="fragment text-left">
+
+- **Aplicamos** o operador Laplaciano (soma das derivadas de segunda ordem) para destacar zonas de variação rápida, atuando como um filtro passa-banda:
+
+$$\nabla \cdot \nabla G(x, y; \sigma) = \frac{x^2 + y^2 - 2\sigma^2}{2\pi\sigma^4} e^{-\frac{x^2 + y^2}{2\sigma^2}}$$
+
+</div>
+
+===============================================================================
+# Adaptação para Formas Elípticas (gLoG)
+
+<div class="fragment text-left">
+
+- **Implementamos** a versão generalizada (gLoG) para superar a limitação de simetria do filtro padrão e detectar partículas alongadas
+
+</div>
+
+
+===============================================================================
+# Adaptação para Formas Elípticas (gLoG)
+
+<div class="text-left">
+
+- **Calculamos** derivadas direcionais utilizando escalas independentes ($\sigma_x$, $\sigma_y$) e um ângulo de rotação ($\theta$):
+
+$$x_\theta = x \cos \theta + y \sin \theta$$
+$$y_\theta = -x \sin \theta + y \cos \theta$$
+
+$$\text{gLoG}(x, y; \sigma_x, \sigma_y, \theta) = \sigma_x \sigma_y \left( \frac{\partial^2 G}{\partial x_\theta^2} + \frac{\partial^2 G}{\partial y_\theta^2} \right)$$
+
+</div>
+
+<div class="fragment text-left">
+
+- **Garantimos** uma separação de fontes altamente precisa, robusta contra ruídos e adaptável a variações no tamanho e formato dos grãos
+
+</div>
+
+<div class="footnote-center">
+
+[Marr & Hildreth (1980)](https://www.google.com/url?sa=D&q=https://doi.org/10.1098/rspb.1980.0020&ust=1772178120000000&usg=AOvVaw059bB5Z6yShXdK7B2Con1D&hl=pt-BR&source=gmail)
+
+[Kong et al. (2013)](https://ieeexplore.ieee.org/document/6408211)
+</div>
+
+===============================================================================
+# Filtro gLoG
+
+<div class="fragment text-left">
+
+- **O Desafio:** dados reais de microscopia contêm ruídos instrumentais e pequenas variações de alta frequência que geram "falsos positivos" na detecção
+
+</div>
+
+<div class="fragment text-left">
+
+- **Gaussiano (Suavização):** aplicamos um filtro que atua como um "desfoque" da imagem. Ele apaga os ruídos pequenos e preserva apenas a forma principal da imagem
+
+</div>
+
+<div class="fragment text-left">
+
+- **Laplaciano (Detecção):** com o dado já limpo, calculamos a curvatura do sinal para encontrar o seu ponto de inflexão mais agudo, identificando o centro da partícula
 
 </div>
 
