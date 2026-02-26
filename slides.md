@@ -343,8 +343,8 @@ Modelagem e processamento de dados de microscopia magnética
 <div class="text-left">
 
 **1. Detecção e separação automática de fontes**
-- **Calcula** a Amplitude do Gradiente Total (TGA) do campo vertical $b_z$ e ajusta o contraste
-- **Identifica** as partículas automaticamente usando o algoritmo *Laplacian of Gaussian* (LoG) para segmentar espacialmente as fontes
+- Calculamos a **Amplitude do Gradiente Total (TGA)** do campo vertical $b_z$ e ajustamos o contraste
+- Identificamos as partículas **semi-automaticamente** usando o algoritmo *Laplacian of Gaussian* (LoG) para segmentar espacialmente as fontes
 
 </div>
 
@@ -357,8 +357,8 @@ Modelagem e processamento de dados de microscopia magnética
 
 Para cada janela detectada:
 
-- **Modela** as anomalias mais fortes primeiro e remove suas contribuições progressivamente
-- **Simplifica** o campo magnético para permitir que fontes mais fracas emerjam, aumentando a precisão da localização, apesar do maior custo computacional
+- Modelamos as anomalias mais fortes primeiro e removemos suas contribuições progressivamente
+- Simplificamos o campo magnético para permitir que fontes mais fracas emerjam, aumentando a precisão da localização
 
 </div>
 
@@ -367,22 +367,22 @@ Para cada janela detectada:
 
 <div class="text-left">
 
-- **a) Estimativa de localização:** calcula a posição 3D inicial da fonte (para a janela atual) resolvendo um sistema linear via Deconvolução de Euler
+- **a) Estimativa de localização:** calculamos a posição  inicial ($\mathbf{v_{inicial}}$)  da fonte (para a janela atual) resolvendo um sistema linear via Deconvolução de Euler
 
 </div>
 <div class="fragment text-left">
 
-- **b) Inversão linear do momento magnético:** estima o vetor de momento de dipolo inicial $\mathbf{m}$ resolvendo um problema de mínimos quadrados, assumindo a posição previamente calculada como fixa
+- **b) Inversão linear do momento magnético:** estimamos o vetor de momento de dipolo inicial ($\mathbf{m_{inicial}}$) resolvendo um problema de mínimos quadrados, assumindo a posição previamente calculada como fixa
 
 </div>
 <div class="fragment text-left">
 
-- **c) Inversão não-linear híbrida:** refina simultaneamente a posição $\mathbf{v}$ (via esquema Levenberg-Marquardt) e reestima o momento $\mathbf{m}$ a cada iteração até a convergência
+- **c) Inversão não-linear híbrida:** refinamos simultaneamente a posição ($\mathbf{v}$) via Levenberg-Marquardt e reestimamos o momento ($\mathbf{m}$) a cada iteração até a convergência
 
 </div>
 <div class="fragment text-left">
 
-- **d) Remoção do sinal:** subtrai o sinal do dipolo modelado dos dados observados, gerando um mapa de resíduos que será utilizado nos próximos ciclos
+- **d) Remoção do sinal:** subtraímos o sinal do dipolo modelado dos dados observados, gerando um mapa de resíduos que é utilizado nos próximos ciclos
 
 </div>
 
@@ -391,7 +391,7 @@ Para cada janela detectada:
 
 <div class="fragment text-left">
 
-- **Calculamos** a Amplitude do Gradiente Total (TGA) a partir do campo magnético vertical $b_z$, definida como a norma do vetor gradiente:
+- Calculamos a **Amplitude do Gradiente Total (TGA)** a partir da componente vertical do campo magnético vertical ($b_z$), definida como a norma do vetor gradiente:
 
 $$||\vec{\mathbf{\nabla}}f(x, y, z)|| = \sqrt{(\partial_x f)^2 + (\partial_y f)^2 + (\partial_z f)^2}$$
 
@@ -411,7 +411,7 @@ $$\partial_y f(x, y, z) \approx \frac{f(x, y + \Delta y, z) - f(x , y + \Delta y
 </div>
 <div class="fragment text-left">
 
-- **Minimizamos** a amplificação de ruídos de curto comprimento de onda ao optar por diferenças finitas em vez da Transformada Rápida de Fourier (FFT) para as derivadas $x$ e $y$
+- Minimizamos a amplificação de ruídos de curto comprimento de onda ao optar por **diferenças finitas** em vez da **Transformada Rápida de Fourier (FFT)** para as derivadas em $x$ e $y$
 
 </div>
 
@@ -437,7 +437,6 @@ $$\partial_y f(x, y, z) \approx \frac{f(x, y + \Delta y, z) - f(x , y + \Delta y
   <li class="text-left fragment"><b>Gera</b> valores estritamente positivos</li>
   <li class="text-left fragment"><b>Centraliza</b> os picos diretamente sobre as fontes magnéticas</li>
   <li class="text-left fragment"><b>Minimiza</b> a dependência da direção de magnetização original</li>
-  <li class="text-left fragment"><b>Realça</b> feições locais e <b>suprime</b> o <i>background</i> regional</li>
   <li class="text-left fragment"><b>Atua</b> como um <b>filtro passa-alta</b>, removendo ruídos de longo comprimento de onda</li>
 </ul>
 
@@ -498,7 +497,7 @@ $$\partial_y f(x, y, z) \approx \frac{f(x, y + \Delta y, z) - f(x , y + \Delta y
 
 <div class="text-left">
 
-- **Suavizamos** a imagem primeiro com um kernel Gaussiano para eliminar ruídos de alta frequência:
+- Utilizando um parâmetro de escala ($\sigma$), **suavizamos** a imagem primeiro com um kernel Gaussiano para **eliminar ruídos de alta frequência**:
 
 $$G(x, y; \sigma) = \frac{1}{2\pi\sigma^2} e^{-\frac{x^2 + y^2}{2\sigma^2}}$$
 
@@ -506,7 +505,7 @@ $$G(x, y; \sigma) = \frac{1}{2\pi\sigma^2} e^{-\frac{x^2 + y^2}{2\sigma^2}}$$
 
 <div class="fragment text-left">
 
-- **Aplicamos** o operador Laplaciano (soma das derivadas de segunda ordem) para destacar zonas de variação rápida, atuando como um filtro passa-banda:
+- Aplicamos o operador **Laplaciano** (soma das derivadas de segunda ordem) para destacar zonas de **variação rápida**:
 
 $$\nabla \cdot \nabla G(x, y; \sigma) = \frac{x^2 + y^2 - 2\sigma^2}{2\pi\sigma^4} e^{-\frac{x^2 + y^2}{2\sigma^2}}$$
 
@@ -517,7 +516,7 @@ $$\nabla \cdot \nabla G(x, y; \sigma) = \frac{x^2 + y^2 - 2\sigma^2}{2\pi\sigma^
 
 <div class="fragment text-left">
 
-- **Implementamos** a versão generalizada (gLoG) para superar a limitação de simetria do filtro padrão e detectar partículas alongadas
+- Implementamos a versão **generalizada do Laplaciano do gaussiano (gLoG)** para superar a **limitação de simetria** do filtro padrão e detectar partículas alongadas
 
 </div>
 
@@ -527,7 +526,7 @@ $$\nabla \cdot \nabla G(x, y; \sigma) = \frac{x^2 + y^2 - 2\sigma^2}{2\pi\sigma^
 
 <div class="text-left">
 
-- **Calculamos** derivadas direcionais utilizando escalas independentes ($\sigma_x$, $\sigma_y$) e um ângulo de rotação ($\theta$):
+- Calculamos derivadas direcionais utilizando **escalas independentes** ($\sigma_x$, $\sigma_y$) e um **ângulo de rotação** ($\theta$):
 
 $$x_\theta = x \cos \theta + y \sin \theta$$
 $$y_\theta = -x \sin \theta + y \cos \theta$$
@@ -538,7 +537,7 @@ $$\text{gLoG}(x, y; \sigma_x, \sigma_y, \theta) = \sigma_x \sigma_y \left( \frac
 
 <div class="fragment text-left">
 
-- Obtemos uma separação de fontes altamente precisa, robusta contra ruídos e adaptável a variações no tamanho e formato dos grãos
+- Obtemos uma **separação de fontes** precisa, robusta contra ruídos e adaptável a variações no tamanho e formato dos grãos
 
 </div>
 
@@ -550,9 +549,9 @@ $$\text{gLoG}(x, y; \sigma_x, \sigma_y, \theta) = \sigma_x \sigma_y \left( \frac
 </div>
 
 ===============================================================================
-# Filtro gLoG
+# Resumo
 
-<div class="fragment text-left">
+<div class="text-left">
 
 - **O Desafio:** dados reais de microscopia contêm ruídos instrumentais e pequenas variações de alta frequência que geram "falsos positivos" na detecção
 
@@ -560,20 +559,20 @@ $$\text{gLoG}(x, y; \sigma_x, \sigma_y, \theta) = \sigma_x \sigma_y \left( \frac
 
 <div class="fragment text-left">
 
-- **Gaussiano (Suavização):** aplicamos um filtro que atua como um "desfoque" da imagem. Ele apaga os ruídos pequenos e preserva apenas a forma principal da imagem
+- **Gaussiano:** aplicamos um filtro que atua como um "desfoque" da imagem. Ele  **"suaviza"** a imagem apaga os ruídos pequenos e preserva apenas a forma principal da imagem.
 
 </div>
 
 <div class="fragment text-left">
 
-- **Laplaciano (Detecção):** com o dado já limpo, calculamos a curvatura do sinal para encontrar o seu ponto de inflexão mais agudo, identificando o centro da partícula
+- **Laplaciano:** com o dado já limpo, calculamos a curvatura do sinal para **detectar** o seu ponto de inflexão mais agudo, identificando o centro da partícula
 
 </div>
 
 ===============================================================================
 # Deconvolução de Euler
 
-<p class="fragment text-left"><b>O que é:</b> um método para estimar a localização e a profundidade de fontes magnéticas a partir de dados de campo total</p>
+<p class="fragment text-left">É um método para estimar a <b>localização</b> e a <b>profundidade</b> de fontes magnéticas</p>
 <div class="text-left fragment">
   <b>Características:</b><br>
   <ul class="text-left"> 
@@ -613,7 +612,7 @@ $$
 $$
 (x - x_c)\partial_x f + (y - y_c)\partial_y f + (z - z_c)\partial_z f = (b - f)\eta
 $$ 
-<p class="fragment"> Expandindo para um modelo pseudo-paramétrico com parâmetros $x_c, y_c, z_c, b$</p>
+<p class="fragment"> Expandimos para um modelo pseudo-paramétrico com parâmetros $x_c, y_c, z_c, b$</p>
 <div class="fragment">
 
 $$
@@ -635,7 +634,7 @@ x_c \ \partial_x f + y_c \ \partial_y f + z_c \ \partial_z f + \eta b
 x \ \partial_x f + y \ \partial_y f + z \ \partial_z f + \eta f
 $$
 
-<p class="fragment">Aplicando a cada ponto de dado, forma-se um sistema linear $N \times 4$</p>
+<p class="fragment">Aplicamos a cada ponto de dado, forma-se um sistema linear $N \times 4$</p>
 
 <p class="fragment">
 \[
@@ -728,7 +727,7 @@ $$
 # Inversão linear
 ## Modelo de Campo de Dipolo
 
-<p class="text-left">O campo $\mathbf{b}$ gerado por um dipolo $\mathbf{m} = [m_x \ m_y \ m_z]^\top$$:</p>
+<p class="text-left">O campo $\mathbf{b}$ gerado por um dipolo $\mathbf{m} = [m_x \ m_y \ m_z]^\top$:</p>
 $$
 \mathbf{b} = 
 \begin{bmatrix}
@@ -848,7 +847,7 @@ $$\Gamma(\mathbf{m}) = \|\mathbf{d}^{o}-\mathbf{A}\mathbf{m}\|^2=(\mathbf{d}^{o}
 <p class="text-left">O que leva às equações normais:</p>
 $$\mathbf{A}^T\mathbf{A}\mathbf{m} = \mathbf{A}^T\mathbf{d}^{o}$$
 
-<p class="fragment">A solução fornece o momento de dipolo estimado $\mathbf{m}$</p>
+<p class="fragment">A solução fornece o momento de dipolo estimado ($\mathbf{m}$)</p>
 
 
 ===============================================================================
@@ -856,17 +855,17 @@ $$\mathbf{A}^T\mathbf{A}\mathbf{m} = \mathbf{A}^T\mathbf{d}^{o}$$
 
 <div class="fragment text-left">
 
-- **Exploramos** a estrutura matemática do problema: para uma localização fixa ($\mathbf{v}$), o campo magnético depende linearmente do momento magnético ($\mathbf{m}$)
+- **Exploramos a estrutura matemática do problema:** para uma localização fixa ($\mathbf{v}$), o campo magnético **depende linearmente** do momento magnético ($\mathbf{m}$)
 
 </div>
 <div class="fragment text-left">
 
-- **Evitamos** o acoplamento direto de parâmetros com ordens de magnitude muito diferentes. Em inversões simultâneas, a diferença entre a escala da localização (**10⁻⁶ m**) e do momento (**10⁻¹³ Am²**) dificulta a convergência de algoritmos de busca direta
+- Evitamos o **acoplamento direto** de parâmetros com **ordens de magnitude muito diferentes**. Em inversões simultâneas, a diferença entre a escala da localização (**10⁻⁶ m**) e do momento (**10⁻¹³ Am²**) dificulta a convergência
 
 </div>
 <div class="fragment text-left">
 
-- **Garantimos** um problema bem escalonado ao separar a inversão em grupos fisicamente homogêneos, dispensando a necessidade de normalizações explícitas de parâmetros
+- Garantimos um problema **bem escalonado** ao separar a inversão em **grupos fisicamente homogêneos**, dispensando a necessidade de **normalizações** explícitas de parâmetros
 
 </div>
 
@@ -875,15 +874,27 @@ $$\mathbf{A}^T\mathbf{A}\mathbf{m} = \mathbf{A}^T\mathbf{d}^{o}$$
 
 <div class="fragment text-left">
 
-- **Implementamos** uma estratégia onde a inversão linear para o momento dipolar $\mathbf{m}$ é **aninhada** dentro da inversão não-linear de Levenberg-Marquardt (LM) para a localização $\mathbf{v}$
+- Implementamos uma estratégia onde a inversão linear para o momento dipolar ($\mathbf{m}$) é **aninhada** dentro da inversão não-linear de **Levenberg-Marquardt (LM)** para a localização $\mathbf{v}$
 
 </div>
 <div class="fragment text-left">
 
 - **Atualizamos** os parâmetros em cada iteração seguindo este ciclo:
-  1. Fixamos uma localização de teste ($\mathbf{v}$), obtida utilizando Deconvolução de Euler
-  2. Estimamos o momento ($\mathbf{m}$) para aquela posição
-  3. Atualizamos a localização ($\mathbf{v}$) com base no gradiente do erro
+
+</div>
+<div class="fragment text-left">
+
+1. Fixamos uma localização de teste ($\mathbf{v}$), obtida utilizando Deconvolução de Euler
+
+</div>
+<div class="fragment text-left">
+
+2. Estimamos o momento ($\mathbf{m}$) para aquela posição
+
+</div>
+<div class="fragment text-left">
+
+3. Atualizamos a localização ($\mathbf{v}$) com base no gradiente do erro
 
 </div>
 
@@ -892,12 +903,12 @@ $$\mathbf{A}^T\mathbf{A}\mathbf{m} = \mathbf{A}^T\mathbf{d}^{o}$$
 
 <div class="fragment text-left">
 
-- **Selecionamos** o algoritmo LM por ser um método baseado em gradiente, torna-se melhorr optimizado quando comparado a métodos que independem de derivadas (como Nelder-Mead) para problemas suaves e diferenciáveis
+- Utilizamos a inversão de **Levenberg-Marquardt** por ser um método **baseado em gradiente**, sendo melhor optimizado quando comparado a métodos que **independem de derivadas**, como Nelder-Mead, para problemas **suaves e diferenciáveis**
 
 </div>
 <div class="fragment text-left">
 
-- **Minimizamos** a função de função objetivo (*misfit*) de mínimos quadrados $\Psi(\mathbf{v})$:
+- Minimizamos a função objetivo a partir do método de mínimos quadrados $\Psi(\mathbf{v})$:
 
 $$\Psi(\mathbf{v}) = \| \mathbf{d}^o - \mathbf{d}(\mathbf{v}) \|^2$$
 
@@ -916,12 +927,12 @@ $$\Psi(\mathbf{v}) = \| \mathbf{d}^o - \mathbf{d}(\mathbf{v}) \|^2$$
 
 <div class="fragment text-left">
 
-- **Partimos** da estimativa inicial de posição $\mathbf{v}$ obtida via ED e **realizamos** uma inversão linear inicial para o momento $\mathbf{m}$.
+- Partimos da estimativa inicial de posição $\mathbf{v}$ obtida via **Deconvolução de Euler** e realizamos uma inversão linear inicial para o momento $\mathbf{m}$.
 
 </div>
 <div class="fragment text-left">
 
-- **Atualizamos** a localização resolvendo o sistema amortecido para o incremento $\Delta \mathbf{v}$:
+- Atualizamos a localização resolvendo o sistema amortecido para o incremento $\Delta \mathbf{v}$:
 
 $$\left( \mathbf{J}^T \mathbf{J} + \alpha \cdot \mathrm{diag}(\mathbf{J}^T \mathbf{J}) \right) \Delta\mathbf{v} = \mathbf{J}^T \big( \mathbf{d}^o - \mathbf{d}(\mathbf{v}) \big)$$
 
@@ -935,7 +946,7 @@ $$\left( \mathbf{J}^T \mathbf{J} + \alpha \cdot \mathrm{diag}(\mathbf{J}^T \math
 
 <div class="text-left">
 
-- **Derivamos** analiticamente o modelo direto do dipolo magnético para construir a matriz Jacobiana:
+- Derivamos **analiticamente** o modelo direto da componente vertical do dipolo magnético para construir a matriz **Jacobiana**:
 
 <p>
 \[
@@ -987,7 +998,7 @@ m_x \left( \frac{15 \Delta x \Delta z^2}{r^7} - \frac{3 \Delta x}{r^5} \right)
 </p>
 <div class="footnote-center">
 
-O uso de derivadas analíticas em vez de diferenças finitas garante maior precisão e eficiência computacional na convergência
+O uso de derivadas analíticas em vez de diferenças finitas garante **maior precisão** e **eficiência computacional** na convergência
 
 </div>
 
@@ -996,7 +1007,7 @@ O uso de derivadas analíticas em vez de diferenças finitas garante maior preci
 
 <div class="text-left">
 
-- **Inicializamos** o parâmetro de Marquardt ($\alpha$) de forma não arbitrária, baseando-nos na mediana da diagonal da Hessiana para refletir o condicionamento do sistema:
+- Inicializamos o **parâmetro de Marquardt ($\alpha$)** de forma não arbitrária, baseando-nos na mediana da diagonal da aproximação Hessiana para o condicionamento do sistema:
 
 $$\alpha = S \cdot \text{median}(\text{diag}(\mathbf{J}^T\mathbf{J})) \quad \text{, } S = 10^{-20}$$
 
@@ -1007,9 +1018,9 @@ $$\left( \mathbf{J}^T \mathbf{J} + \alpha \cdot \mathrm{diag}(\mathbf{J}^T \math
 
 <div class="fragment text-left">
 
-- **Ajustamos** $\alpha$ dinamicamente via estratégia de região de confiança:
-  - **Sucesso (redução do erro):** aceitamos $\Delta \mathbf{v}$ e dividimos $\alpha$ por 10 (tendendo a Gauss-Newton)
-  - **Falha (aumento do erro):** rejeitamos $\Delta \mathbf{v}$ e multiplicamos $\alpha$ por 10 (tendendo a Steepest Descent)
+- Ajustamos $\alpha$ dinamicamente via estratégia de **região de confiança**:
+  - **Redução do erro = Sucesso:** aceitamos $\Delta \mathbf{v}$ e dividimos $\alpha$ por 10 tendendo a **Gauss-Newton**
+  - **Aumento do erro = Levenberg-Marquardt:** rejeitamos $\Delta \mathbf{v}$ e multiplicamos $\alpha$ por 10 tendendo a **Steepest Descent**
 
 </div>
 
@@ -1018,19 +1029,19 @@ $$\left( \mathbf{J}^T \mathbf{J} + \alpha \cdot \mathrm{diag}(\mathbf{J}^T \math
 
 <div class="fragment text-left">
 
-- **Limitamos** o deslocamento máximo por iteração ($\|\Delta \mathbf{v}\| \le 10\mu m$) para evitar atualizações que não façam sentido fisicamente e garantir que a solução permaneça dentro da janela de dados
+- Limitamos o deslocamento máximo por iteração ($\|\Delta \mathbf{v}\| \le 10\mu m$) para evitar atualizações que não façam sentido fisicamente e garantir que a solução permaneça dentro da janela de dados
 
 </div>
 <div class="fragment text-left">
 
 - **Estruturamos** a convergência em dois loops:
-  - **Loop Interno:** refina a posição $\mathbf{v}$ via LM com momento fixo
-  - **Loop Externo:** reestima o momento $\mathbf{m}$ via inversão linear com posição fixa
+  - **Loop Interno:** refina a posição ($\mathbf{v}$) via **Levenberg-Marquardt** com momento fixo
+  - **Loop Externo:** reestima o momento ($\mathbf{m}$) via **inversão linear** com posição fixa
 
 </div>
 <div class="fragment text-left">
 
-- **Finalizamos** o processo quando a redução relativa do resíduo atinge a tolerância de $10^{-2}$, obtendo uma solução robusta mesmo com parâmetros de escalas físicas disparatadas
+- Finalizamos o processo quando a **redução relativa do resíduo** atinge a tolerância de **$10^{-2}$**
 
 </div>
 
@@ -1040,8 +1051,8 @@ $$\left( \mathbf{J}^T \mathbf{J} + \alpha \cdot \mathrm{diag}(\mathbf{J}^T \math
 <div class="fragment text-left">
 
 1. **Inicialização:**
-   - **Partimos** da estimativa de Euler para a posição inicial  ($\mathbf{v}$)
-   - **Definimos** a tolerância de convergência e **inicializamos** o amortecimento ($\alpha$) com base na curvatura da Hessiana aproximada
+   - Partimos da estimativa de Euler para a posição inicial  ($\mathbf{v}$)
+   - Definimos a tolerância de convergência e inicializamos o parâmetro de Marquardt ($\alpha$) com base na curvatura da Hessiana aproximada
 
 </div>
 
@@ -1049,22 +1060,32 @@ $$\left( \mathbf{J}^T \mathbf{J} + \alpha \cdot \mathrm{diag}(\mathbf{J}^T \math
 <div class="text-left">
 
 2. **Inversão Acoplada (Loop Externo):**
-   - **Alternamos** entre a estimativa do momento e o refinamento da posição até que a redução da função objetivo global seja inferior à tolerância definida
+   - Alternamos entre a **estimativa do momento** e o **refinamento da posição** até que a redução da função objetivo global seja **inferior à tolerância definida**
 
 </div>
 <div class="fragment text-left">
 
-   - **A) Estimativa linear do momento:** com a posição $\mathbf{v}$ fixa, **calculamos** analiticamente o momento $\mathbf{m}$ via mínimos quadrados
-   - **B) Atualização não-linear da posição:** com o momento $\mathbf{m}$ fixo, **refinamos** a localização $\mathbf{v}$ através do loop interno de Levenberg-Marquardt
-   - **C) Misfit:** calculamos o dado predito e **avaliamos** o misfit global
+  - **A) Estimativa linear do momento:** com a posição ($\mathbf{v}$) fixa, **calculamos** analiticamente o momento ($\mathbf{m}$) via mínimos quadrados
 
 </div>
+<div class="fragment text-left">
+
+  - **B) Atualização não-linear da posição:** com o momento ($\mathbf{m}$) fixo, **refinamos** a localização ($\mathbf{v}$) através do loop interno de Levenberg-Marquardt
+
+</div>
+<div class="fragment text-left">
+
+  - **C) Misfit:** calculamos o dado predito e avaliamos o **misfit global**
+
+</div>
+
+
 
 ===============================================================================
 <div class="text-left">
 
 3. **Convergência:**
-   - **Finalizamos** o algoritmo quando a melhoria entre iterações sucessivas se torna insignificante, extraindo os vetores de posição e momento finais da fonte
+  - Finalizamos o algoritmo quando a melhoria entre iterações sucessivas se torna insignificante, extraindo os **vetores de posição e momento finais da fonte**
 
 </div>
 
@@ -1073,16 +1094,16 @@ $$\left( \mathbf{J}^T \mathbf{J} + \alpha \cdot \mathrm{diag}(\mathbf{J}^T \math
 
 <div class="fragment text-left">
 
-- **Integramos** o pacote ao projeto **Fatiando a Terra**, uma iniciativa *open-source* nascida no Brasil (USP, 2008) e referência global em geofísica
+- Integramos o pacote ao projeto **Fatiando a Terra**, uma iniciativa *open-source* nascida no Brasil (USP, 2008) e referência global em geofísica
 
 </div>
 <div class="fragment text-left">
 
-- **Desenvolvemos** o Magali (Licença BSD 3) como uma solução ponta a ponta para microscopia magnética:
+- Desenvolvemos o Magali sob **Licença BSD 3** como uma solução ponta a ponta para microscopia magnética:
   - Filtragem avançada de dados
   - Detecção automática de partículas
   - Inversão acoplada
-  - modelagem direta
+  - Modelagem direta
 
 </div>
 
@@ -1091,12 +1112,12 @@ $$\left( \mathbf{J}^T \mathbf{J} + \alpha \cdot \mathrm{diag}(\mathbf{J}^T \math
 
 <div class="fragment text-left">
 
-- **Estruturamos** a ferramenta de forma modular
+- Estruturamos a ferramenta de forma modular
 </div>
 
 <div class="fragment text-left">
 
-- **Aceleramos** os gargalos computacionais utilizando **Numba**
+- Aceleramos os gargalos computacionais utilizando **Numba**
   - A compilação *Just-in-Time* (JIT) e a vetorização permitem que a nossa inversão processe mapas de alta resolução com desempenho melhor
 
 </div>
@@ -1106,7 +1127,7 @@ $$\left( \mathbf{J}^T \mathbf{J} + \alpha \cdot \mathrm{diag}(\mathbf{J}^T \math
 
 <div class="fragment text-left">
 
-- **Integração Contínua (CI):** implementamos um pipeline automatizado que executa nossos de **testes de unidade** a cada *commit*, assegurando 100% de cobertura das funções presentes no pacote
+- **Integração Contínua (CI):** implementamos um pipeline automatizado que executa nossos de **testes de unidade** a cada *commit*, assegurando **100% de cobertura** das funções presentes no pacote
 
 </div>
 <div class="fragment text-left">
@@ -1120,12 +1141,12 @@ $$\left( \mathbf{J}^T \mathbf{J} + \alpha \cdot \mathrm{diag}(\mathbf{J}^T \math
 
 <div class="text-left">
 
-- **Matriz de Build Multiplataforma:** Utilizamos **GitHub Actions** para disparar rotinas de verificação em Linux, Windows e macOS simultaneamente, garantindo estabilidade cross-platform
+- **Matriz de build multiplataforma:** utilizamos **GitHub Actions** para disparar rotinas de verificação em **Linux, Windows e macOS** simultaneamente, garantindo estabilidade cross-platform
 
 </div>
 <div class="fragment text-left">
 
-- **Entrega Contínua (CD):** O fluxo de trabalho será preparado para **deploy automatizado** no PyPI e conda-forge, assegurando que as melhorias cheguem ao usuário final de forma rápida e segura
+- **Entrega contínua (CD):** o fluxo de trabalho será preparado para **deploy automatizado** no PyPI e conda-forge, assegurando que as melhorias cheguem ao usuário final de forma rápida e segura
 
 </div>
 
@@ -1134,13 +1155,13 @@ $$\left( \mathbf{J}^T \mathbf{J} + \alpha \cdot \mathrm{diag}(\mathbf{J}^T \math
 
 <div class="fragment text-left">
 
-- **Adotamos** os pilares da **Ciência Aberta**: desenvolvimento transparente no GitHub, *issue tracking* público e documentação completa com tutoriais replicáveis
+- **Adotamos os pilares da Ciência Aberta**: desenvolvimento transparente no GitHub, issue tracking público e documentação completa com tutoriais replicáveis
 
 </div>
 
 <div class="fragment text-left">
 
-- **Facilitaremos** o acesso global da nossa futura versão v0.1 através dos gerenciadores padrão da comunidade científica:
+- Facilitaremos o acesso global da nossa futura **versão v0.1** através dos gerenciadores padrão da comunidade científica:
   * **PyPI** (Python Package Index)
   * **conda-forge** (ambientes reprodutíveis)
 
@@ -1253,7 +1274,7 @@ $$\left( \mathbf{J}^T \mathbf{J} + \alpha \cdot \mathrm{diag}(\mathbf{J}^T \math
 
 <div class="fragment text-left">
 
-- Demonstramos a robustez do Magali aplicando-o a três conjuntos independentes de dados reais com diferentes características geológicas e magnéticas:
+- Demonstramos a robustez do Magali aplicando-o a três conjuntos independentes de dados reais com diferentes características:
 
 </div>
 
@@ -1460,19 +1481,19 @@ O processamento automatizado identificou com sucesso:
 
 <div class="fragment text-left">
 
-- **Consolidamos** um fluxo completo de inversão (detecção, Euler e refinamento) em um framework unificado, extensível e de código aberto
+- Consolidamos um **fluxo completo de inversão** (detecção, Euler e refinamento) em um pacote unificado, extensível e de código aberto
 
 </div>
 
 <div class="fragment text-left">
 
-- **Otimizamos** a inversão não-linear através da estratégia híbrida com o algoritmo de **Levenberg-Marquardt**, utilizando derivadas analíticas do modelo direto
+- Otimizamos a inversão não-linear através da **estratégia híbrida** com o algoritmo de **Levenberg-Marquardt**, utilizando derivadas analíticas do modelo direto
 
 </div>
 
 <div class="fragment text-left">
 
-- **Eliminamos** problemas de escalonamento numérico e instabilidade ao desacoplar os parâmetros de momento (linear) e posição (não-linear), superando métodos de busca direta
+- Eliminamos problemas de escalonamento numérico e instabilidade ao **desacoplar os parâmetros** de momento dipolar (linear) e posição (não-linear)
 
 </div>
 
@@ -1519,12 +1540,12 @@ O processamento automatizado identificou com sucesso:
 
 <div class="fragment text-left">
 
-- O método pressupõe aproximações dipolares e isolamento via janelamento
+- O método pressupõe **aproximações dipolares** e **isolamento via janelamento**
 
 </div>
 <div class="fragment text-left">
 
-- Fontes fortemente não-dipolares ou clusters densos ainda são desafios
+- Fontes **fortemente não-dipolares** ou **clusters** densos ainda são desafios para o método
 
 </div>
 
@@ -1533,21 +1554,21 @@ O processamento automatizado identificou com sucesso:
 
 <div class="text-left">
 
-- **Projetamos** para o futuro do Magali:
+- Projetamos para o futuro do Magali:
 
   <div class="fragment text-left">
 
-  - Implementação de expansão multipolar
+  - Implementação de **expansão multipolar**
 
   </div>
   <div class="fragment text-left">
 
-  - Módulos de projeção estereográfica e filtragem de inversão
+  - Módulos de **projeção estereográfica** e **filtragem** de inversão
 
   </div>
   <div class="fragment text-left">
 
-  - Rotinas avançadas para detecção automática de fontes
+  - Rotinas avançadas para **detecção automática** de fontes
 
   </div>
   <div class="fragment text-left">
