@@ -2,7 +2,7 @@
 
 **Presenter**: Yago Moreira Castro
 
-**Preview:** [https://yagomcastro.github.io/sbgf-magali-presentation](https://yagomcastro.github.io/msc-presentation)
+**Preview:** [yagomcastro.github.io/msc-presentation](https://yagomcastro.github.io/msc-presentation)
 
 > A template by Leonardo Uieda was used to create this presentation:
 > https://github.com/leouieda/talk-template
